@@ -1,0 +1,114 @@
+\hypertarget{st7735_8c}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Src/st7735.c}
+\label{st7735_8c}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/st7735.c@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/st7735.c}}
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}st7735.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}malloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+\doxysubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{st7735_8c_a62249e384b997229a3e2ae74ade334e2}{DELAY}}~0x80
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{st7735_8c_a37a44640340fd043ef5ce296bc24a016}{ST7735\+\_\+\+Unselect}} ()
+\item 
+void \mbox{\hyperlink{st7735_8c_ab194cedbacbd10d612b3fbe14aefaaab}{ST7735\+\_\+\+Init}} ()
+\item 
+void \mbox{\hyperlink{st7735_8c_a5f14e27ee982d8839948ece78c0cbf48}{ST7735\+\_\+\+Draw\+Pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{st7735_8c_a58047936eeaceca83d61fb3e47d8215a}{ST7735\+\_\+\+Write\+String}} (uint16\+\_\+t x, uint16\+\_\+t y, const char $\ast$str, \mbox{\hyperlink{struct_font_def}{Font\+Def}} font, uint16\+\_\+t color, uint16\+\_\+t bgcolor)
+\item 
+void \mbox{\hyperlink{st7735_8c_ae91430b14654022f725f61a9b4eecaf7}{ST7735\+\_\+\+Fill\+Rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t w, uint16\+\_\+t h, uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{st7735_8c_a74523215e8f7e3d810d8ac79688671f6}{ST7735\+\_\+\+Fill\+Rectangle\+Fast}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t w, uint16\+\_\+t h, uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{st7735_8c_a3a14506207ab49aee2c40700b5036271}{ST7735\+\_\+\+Fill\+Screen}} (uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{st7735_8c_ab4664027af128dce09224594a1cf9a83}{ST7735\+\_\+\+Fill\+Screen\+Fast}} (uint16\+\_\+t color)
+\item 
+void \mbox{\hyperlink{st7735_8c_a7e1f56549e23caf81fa4f1eadf85875f}{ST7735\+\_\+\+Draw\+Image}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t w, uint16\+\_\+t h, const uint16\+\_\+t $\ast$data)
+\item 
+void \mbox{\hyperlink{st7735_8c_a1a037b05b226b6884774a979ca2051ed}{ST7735\+\_\+\+Invert\+Colors}} (bool invert)
+\item 
+void \mbox{\hyperlink{st7735_8c_addf835f6a65130e8947663ef7e71ee76}{ST7735\+\_\+\+Set\+Gamma}} (uint8\+\_\+t gamma)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji}
+\mbox{\Hypertarget{st7735_8c_a62249e384b997229a3e2ae74ade334e2}\label{st7735_8c_a62249e384b997229a3e2ae74ade334e2}} 
+\index{st7735.c@{st7735.c}!DELAY@{DELAY}}
+\index{DELAY@{DELAY}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{DELAY}{DELAY}}
+{\footnotesize\ttfamily \#define DELAY~0x80}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{st7735_8c_a7e1f56549e23caf81fa4f1eadf85875f}\label{st7735_8c_a7e1f56549e23caf81fa4f1eadf85875f}} 
+\index{st7735.c@{st7735.c}!ST7735\_DrawImage@{ST7735\_DrawImage}}
+\index{ST7735\_DrawImage@{ST7735\_DrawImage}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_DrawImage()}{ST7735\_DrawImage()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Draw\+Image (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{w,  }\item[{uint16\+\_\+t}]{h,  }\item[{const uint16\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a5f14e27ee982d8839948ece78c0cbf48}\label{st7735_8c_a5f14e27ee982d8839948ece78c0cbf48}} 
+\index{st7735.c@{st7735.c}!ST7735\_DrawPixel@{ST7735\_DrawPixel}}
+\index{ST7735\_DrawPixel@{ST7735\_DrawPixel}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_DrawPixel()}{ST7735\_DrawPixel()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Draw\+Pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_ae91430b14654022f725f61a9b4eecaf7}\label{st7735_8c_ae91430b14654022f725f61a9b4eecaf7}} 
+\index{st7735.c@{st7735.c}!ST7735\_FillRectangle@{ST7735\_FillRectangle}}
+\index{ST7735\_FillRectangle@{ST7735\_FillRectangle}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_FillRectangle()}{ST7735\_FillRectangle()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Fill\+Rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{w,  }\item[{uint16\+\_\+t}]{h,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a74523215e8f7e3d810d8ac79688671f6}\label{st7735_8c_a74523215e8f7e3d810d8ac79688671f6}} 
+\index{st7735.c@{st7735.c}!ST7735\_FillRectangleFast@{ST7735\_FillRectangleFast}}
+\index{ST7735\_FillRectangleFast@{ST7735\_FillRectangleFast}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_FillRectangleFast()}{ST7735\_FillRectangleFast()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Fill\+Rectangle\+Fast (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{w,  }\item[{uint16\+\_\+t}]{h,  }\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a3a14506207ab49aee2c40700b5036271}\label{st7735_8c_a3a14506207ab49aee2c40700b5036271}} 
+\index{st7735.c@{st7735.c}!ST7735\_FillScreen@{ST7735\_FillScreen}}
+\index{ST7735\_FillScreen@{ST7735\_FillScreen}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_FillScreen()}{ST7735\_FillScreen()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Fill\+Screen (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_ab4664027af128dce09224594a1cf9a83}\label{st7735_8c_ab4664027af128dce09224594a1cf9a83}} 
+\index{st7735.c@{st7735.c}!ST7735\_FillScreenFast@{ST7735\_FillScreenFast}}
+\index{ST7735\_FillScreenFast@{ST7735\_FillScreenFast}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_FillScreenFast()}{ST7735\_FillScreenFast()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Fill\+Screen\+Fast (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_ab194cedbacbd10d612b3fbe14aefaaab}\label{st7735_8c_ab194cedbacbd10d612b3fbe14aefaaab}} 
+\index{st7735.c@{st7735.c}!ST7735\_Init@{ST7735\_Init}}
+\index{ST7735\_Init@{ST7735\_Init}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_Init()}{ST7735\_Init()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a1a037b05b226b6884774a979ca2051ed}\label{st7735_8c_a1a037b05b226b6884774a979ca2051ed}} 
+\index{st7735.c@{st7735.c}!ST7735\_InvertColors@{ST7735\_InvertColors}}
+\index{ST7735\_InvertColors@{ST7735\_InvertColors}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_InvertColors()}{ST7735\_InvertColors()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Invert\+Colors (\begin{DoxyParamCaption}\item[{bool}]{invert }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_addf835f6a65130e8947663ef7e71ee76}\label{st7735_8c_addf835f6a65130e8947663ef7e71ee76}} 
+\index{st7735.c@{st7735.c}!ST7735\_SetGamma@{ST7735\_SetGamma}}
+\index{ST7735\_SetGamma@{ST7735\_SetGamma}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_SetGamma()}{ST7735\_SetGamma()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Set\+Gamma (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{gamma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a37a44640340fd043ef5ce296bc24a016}\label{st7735_8c_a37a44640340fd043ef5ce296bc24a016}} 
+\index{st7735.c@{st7735.c}!ST7735\_Unselect@{ST7735\_Unselect}}
+\index{ST7735\_Unselect@{ST7735\_Unselect}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_Unselect()}{ST7735\_Unselect()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Unselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{st7735_8c_a58047936eeaceca83d61fb3e47d8215a}\label{st7735_8c_a58047936eeaceca83d61fb3e47d8215a}} 
+\index{st7735.c@{st7735.c}!ST7735\_WriteString@{ST7735\_WriteString}}
+\index{ST7735\_WriteString@{ST7735\_WriteString}!st7735.c@{st7735.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_WriteString()}{ST7735\_WriteString()}}
+{\footnotesize\ttfamily void ST7735\+\_\+\+Write\+String (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{struct_font_def}{Font\+Def}}}]{font,  }\item[{uint16\+\_\+t}]{color,  }\item[{uint16\+\_\+t}]{bgcolor }\end{DoxyParamCaption})}
+

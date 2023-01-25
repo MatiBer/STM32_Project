@@ -1,0 +1,519 @@
+\hypertarget{main_8c}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Src/main.c}
+\label{main_8c}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/main.c@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}st7735.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fonts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ir.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ds18b20.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{main_8c_ae478ca2647e8d2f7dd1828ce43889a9e}{HAL\+\_\+\+RTC\+\_\+\+Get\+Time}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{rtc_8h_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}, RTC\+\_\+\+Time\+Type\+Def $\ast$s\+Time, uint32\+\_\+t Format)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{main_8c_a07ec2e43a305aa55e8c2442a349fc505}{HAL\+\_\+\+RTC\+\_\+\+Get\+Date}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{rtc_8h_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}, RTC\+\_\+\+Date\+Type\+Def $\ast$s\+Date, uint32\+\_\+t Format)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{main_8c_afe0fed98171a564decd2a6c9be9781d8}{HAL\+\_\+\+RTC\+\_\+\+Set\+Time}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{rtc_8h_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}, RTC\+\_\+\+Time\+Type\+Def $\ast$s\+Time, uint32\+\_\+t Format)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{main_8c_a4786b652ffee2d59da2c65dd78646405}{HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{rtc_8h_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}, RTC\+\_\+\+Alarm\+Type\+Def $\ast$s\+Alarm, uint32\+\_\+t Alarm, uint32\+\_\+t Format)
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ad6f78d6021bda79a39f1217ec234ba19}{Active\+\_\+alarm}} (uint8\+\_\+t remote)
+\begin{DoxyCompactList}\small\item\em Działanie alarmu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae3502991762581d364ca9be18cd70bfd}{Turn\+\_\+on\+\_\+alarm}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a5bcf31aff879907c9cc52478e907091e}{Save\+\_\+last\+\_\+time}} (void)
+\begin{DoxyCompactList}\small\item\em Zapisanie ostatnich wartości zegara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0e2c4efe11b736ddb1124e68ae93d18f}{Save\+\_\+last\+\_\+alarm}} (void)
+\begin{DoxyCompactList}\small\item\em Przechowuje wartości ustawionego alarmu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a4f19743abeb32e8ab906746d1f2b5dc4}{Color\+\_\+\+Selected}} (void)
+\begin{DoxyCompactList}\small\item\em Zaznacza wybraną wartość zegara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a995e66ef071314b821f9b47583266b72}{Plus\+\_\+\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Zwiększa wybraną wartość zegara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a5c91c671620186ee70560d29b2bf0c13}{Minus\+\_\+\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Zmniejsza wybraną wartość zegara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ace7ccb99aa0dcc6504caacc1b3cf4a66}{Change\+\_\+\+Time}} (uint8\+\_\+t remote)
+\begin{DoxyCompactList}\small\item\em Zmienianie czasu i daty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ab60c2c424d4b0918f7287f707cb8b1fe}{Set\+\_\+\+Alarm}} (uint8\+\_\+t remote)
+\begin{DoxyCompactList}\small\item\em Ustawianie godziny i minuty alarmu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae4c62b3128399db686b6652be88cfab0}{Hello}} (void)
+\begin{DoxyCompactList}\small\item\em Wyświetla \char`\"{}\+Hello\char`\"{} na wyświetlaczu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a357d349153d351bd927d85ce50d6bc09}{Write\+\_\+\+Time\+Date}} (void)
+\begin{DoxyCompactList}\small\item\em Pobiera czas z RTC i wypisuje na wyświetlacz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ad936474e1d6b2457155bd72bff4dcd48}{Write\+\_\+\+Temp}} (void)
+\begin{DoxyCompactList}\small\item\em Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a25ec4672584d40da11a578d7bf0b5e8a}{Write\+\_\+selected}} (uint8\+\_\+t select)
+\begin{DoxyCompactList}\small\item\em Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a72c85caec96f08362025b809072590da}{Write\+\_\+screen}} (uint8\+\_\+t remote)
+\begin{DoxyCompactList}\small\item\em Ustala co jest wyświetlane. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+RTC\+\_\+\+Time\+Type\+Def \mbox{\hyperlink{main_8c_a5781705b86349b4f6faa3fb1a01fbda8}{time}}
+\item 
+RTC\+\_\+\+Date\+Type\+Def \mbox{\hyperlink{main_8c_ab8ad26b150ebb02716be2e4a37d953bd}{date}}
+\item 
+RTC\+\_\+\+Alarm\+Type\+Def \mbox{\hyperlink{main_8c_a19e516b0237c156b24806281426b0e48}{alarm}}
+\item 
+char \mbox{\hyperlink{main_8c_a1fb2ce456d06d5ca1708d27f39681df7}{str\+Time}} \mbox{[}20\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ab722ba3dcbcc73642ec1a1046459da67}{str\+Date}} \mbox{[}20\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_acfb9d6dfbdf287a2ad0b73ba208e5f28}{str\+Temp}} \mbox{[}20\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a41948e891d463b07cf07312ca2d88b81}{str\+Colored}} \mbox{[}10\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a48262b82bd498f8c6172c1207e05f610}{Select\+\_\+write}} = 0
+\item 
+bool \mbox{\hyperlink{main_8c_acc86743988bff3b9a5d33d36c9f19318}{Enable\+\_\+change}} = false
+\item 
+bool \mbox{\hyperlink{main_8c_a6775c501c469a448021d6f96cbfeecbf}{Enable\+\_\+alarm}} = false
+\item 
+bool \mbox{\hyperlink{main_8c_accc1c57a243ff20c5f38a5609e377482}{Alarm\+\_\+on}} = false
+\item 
+RTC\+\_\+\+Time\+Type\+Def \mbox{\hyperlink{main_8c_a4def56d0b544e9a4d381c05c63cb29d7}{new\+\_\+time}} = \{0\}
+\item 
+RTC\+\_\+\+Date\+Type\+Def \mbox{\hyperlink{main_8c_a7894ebe6409a9ae743d85861726a2d72}{new\+\_\+date}} = \{0\}
+\item 
+RTC\+\_\+\+Alarm\+Type\+Def \mbox{\hyperlink{main_8c_a54cf0316ff9dbdb759354467decf041f}{new\+\_\+alarm}} = \{0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a86c6a0b153ec6341a65edf7a7c52055f}{Select\+\_\+time\+\_\+date}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a8fbffcf15b445752944afe56a8bbb63e}{Select\+\_\+alarm\+\_\+time}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_ae3bdbafb2ea1bc4c2fafed28f7529174}{last\+\_\+ms}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+\+: Main program body 
+
+\begin{DoxyAttention}{Uwaga}
+
+\end{DoxyAttention}
+\begin{DoxyAuthor}{Autor}
+\+: Mateusz Berliński
+\end{DoxyAuthor}
+@title \+: Zegar
+
+@description\+: Tematem projektu jest zegar. W normalnej pracy będzie wyświetlał aktualną godzinę i datę. Będzie można go przełączyć na wyświetlanie temperatury. Sterowanie odbywa się przez pilot podczerwieni. Dane pokazywane są na wyswietlaczu tft przy pomocy SPI. Na zegarze można ustawiać date, godzinę i alarmy. Alarmy włączają brzęczyk, a na ekranie pojawia się komunikat.
+
+Copyright (c) 2022 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{main_8c_ad6f78d6021bda79a39f1217ec234ba19}\label{main_8c_ad6f78d6021bda79a39f1217ec234ba19}} 
+\index{main.c@{main.c}!Active\_alarm@{Active\_alarm}}
+\index{Active\_alarm@{Active\_alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Active\_alarm()}{Active\_alarm()}}
+{\footnotesize\ttfamily void Active\+\_\+alarm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{remote }\end{DoxyParamCaption})}
+
+
+
+Działanie alarmu. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ace7ccb99aa0dcc6504caacc1b3cf4a66}\label{main_8c_ace7ccb99aa0dcc6504caacc1b3cf4a66}} 
+\index{main.c@{main.c}!Change\_Time@{Change\_Time}}
+\index{Change\_Time@{Change\_Time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Change\_Time()}{Change\_Time()}}
+{\footnotesize\ttfamily void Change\+\_\+\+Time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{remote }\end{DoxyParamCaption})}
+
+
+
+Zmienianie czasu i daty. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a4f19743abeb32e8ab906746d1f2b5dc4}\label{main_8c_a4f19743abeb32e8ab906746d1f2b5dc4}} 
+\index{main.c@{main.c}!Color\_Selected@{Color\_Selected}}
+\index{Color\_Selected@{Color\_Selected}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Color\_Selected()}{Color\_Selected()}}
+{\footnotesize\ttfamily void Color\+\_\+\+Selected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Zaznacza wybraną wartość zegara. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a4786b652ffee2d59da2c65dd78646405}\label{main_8c_a4786b652ffee2d59da2c65dd78646405}} 
+\index{main.c@{main.c}!HAL\_RTC\_GetAlarm@{HAL\_RTC\_GetAlarm}}
+\index{HAL\_RTC\_GetAlarm@{HAL\_RTC\_GetAlarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_GetAlarm()}{HAL\_RTC\_GetAlarm()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc,  }\item[{RTC\+\_\+\+Alarm\+Type\+Def $\ast$}]{s\+Alarm,  }\item[{uint32\+\_\+t}]{Alarm,  }\item[{uint32\+\_\+t}]{Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a07ec2e43a305aa55e8c2442a349fc505}\label{main_8c_a07ec2e43a305aa55e8c2442a349fc505}} 
+\index{main.c@{main.c}!HAL\_RTC\_GetDate@{HAL\_RTC\_GetDate}}
+\index{HAL\_RTC\_GetDate@{HAL\_RTC\_GetDate}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_GetDate()}{HAL\_RTC\_GetDate()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+RTC\+\_\+\+Get\+Date (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc,  }\item[{RTC\+\_\+\+Date\+Type\+Def $\ast$}]{s\+Date,  }\item[{uint32\+\_\+t}]{Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ae478ca2647e8d2f7dd1828ce43889a9e}\label{main_8c_ae478ca2647e8d2f7dd1828ce43889a9e}} 
+\index{main.c@{main.c}!HAL\_RTC\_GetTime@{HAL\_RTC\_GetTime}}
+\index{HAL\_RTC\_GetTime@{HAL\_RTC\_GetTime}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_GetTime()}{HAL\_RTC\_GetTime()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+RTC\+\_\+\+Get\+Time (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc,  }\item[{RTC\+\_\+\+Time\+Type\+Def $\ast$}]{s\+Time,  }\item[{uint32\+\_\+t}]{Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_afe0fed98171a564decd2a6c9be9781d8}\label{main_8c_afe0fed98171a564decd2a6c9be9781d8}} 
+\index{main.c@{main.c}!HAL\_RTC\_SetTime@{HAL\_RTC\_SetTime}}
+\index{HAL\_RTC\_SetTime@{HAL\_RTC\_SetTime}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_SetTime()}{HAL\_RTC\_SetTime()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+RTC\+\_\+\+Set\+Time (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc,  }\item[{RTC\+\_\+\+Time\+Type\+Def $\ast$}]{s\+Time,  }\item[{uint32\+\_\+t}]{Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}\label{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}} 
+\index{main.c@{main.c}!HAL\_TIM\_IC\_CaptureCallback@{HAL\_TIM\_IC\_CaptureCallback}}
+\index{HAL\_TIM\_IC\_CaptureCallback@{HAL\_TIM\_IC\_CaptureCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_IC\_CaptureCallback()}{HAL\_TIM\_IC\_CaptureCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ae4c62b3128399db686b6652be88cfab0}\label{main_8c_ae4c62b3128399db686b6652be88cfab0}} 
+\index{main.c@{main.c}!Hello@{Hello}}
+\index{Hello@{Hello}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Hello()}{Hello()}}
+{\footnotesize\ttfamily void Hello (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wyświetla \char`\"{}\+Hello\char`\"{} na wyświetlaczu. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a5c91c671620186ee70560d29b2bf0c13}\label{main_8c_a5c91c671620186ee70560d29b2bf0c13}} 
+\index{main.c@{main.c}!Minus\_Time@{Minus\_Time}}
+\index{Minus\_Time@{Minus\_Time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Minus\_Time()}{Minus\_Time()}}
+{\footnotesize\ttfamily void Minus\+\_\+\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Zmniejsza wybraną wartość zegara. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a995e66ef071314b821f9b47583266b72}\label{main_8c_a995e66ef071314b821f9b47583266b72}} 
+\index{main.c@{main.c}!Plus\_Time@{Plus\_Time}}
+\index{Plus\_Time@{Plus\_Time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Plus\_Time()}{Plus\_Time()}}
+{\footnotesize\ttfamily void Plus\+\_\+\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Zwiększa wybraną wartość zegara. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a0e2c4efe11b736ddb1124e68ae93d18f}\label{main_8c_a0e2c4efe11b736ddb1124e68ae93d18f}} 
+\index{main.c@{main.c}!Save\_last\_alarm@{Save\_last\_alarm}}
+\index{Save\_last\_alarm@{Save\_last\_alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Save\_last\_alarm()}{Save\_last\_alarm()}}
+{\footnotesize\ttfamily void Save\+\_\+last\+\_\+alarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Przechowuje wartości ustawionego alarmu. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a5bcf31aff879907c9cc52478e907091e}\label{main_8c_a5bcf31aff879907c9cc52478e907091e}} 
+\index{main.c@{main.c}!Save\_last\_time@{Save\_last\_time}}
+\index{Save\_last\_time@{Save\_last\_time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Save\_last\_time()}{Save\_last\_time()}}
+{\footnotesize\ttfamily void Save\+\_\+last\+\_\+time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Zapisanie ostatnich wartości zegara. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ab60c2c424d4b0918f7287f707cb8b1fe}\label{main_8c_ab60c2c424d4b0918f7287f707cb8b1fe}} 
+\index{main.c@{main.c}!Set\_Alarm@{Set\_Alarm}}
+\index{Set\_Alarm@{Set\_Alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Set\_Alarm()}{Set\_Alarm()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Alarm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{remote }\end{DoxyParamCaption})}
+
+
+
+Ustawianie godziny i minuty alarmu. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Configure LSE Drive Capability
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks\mbox{\Hypertarget{main_8c_ae3502991762581d364ca9be18cd70bfd}\label{main_8c_ae3502991762581d364ca9be18cd70bfd}} 
+\index{main.c@{main.c}!Turn\_on\_alarm@{Turn\_on\_alarm}}
+\index{Turn\_on\_alarm@{Turn\_on\_alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Turn\_on\_alarm()}{Turn\_on\_alarm()}}
+{\footnotesize\ttfamily void Turn\+\_\+on\+\_\+alarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a72c85caec96f08362025b809072590da}\label{main_8c_a72c85caec96f08362025b809072590da}} 
+\index{main.c@{main.c}!Write\_screen@{Write\_screen}}
+\index{Write\_screen@{Write\_screen}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Write\_screen()}{Write\_screen()}}
+{\footnotesize\ttfamily void Write\+\_\+screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{remote }\end{DoxyParamCaption})}
+
+
+
+Ustala co jest wyświetlane. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a25ec4672584d40da11a578d7bf0b5e8a}\label{main_8c_a25ec4672584d40da11a578d7bf0b5e8a}} 
+\index{main.c@{main.c}!Write\_selected@{Write\_selected}}
+\index{Write\_selected@{Write\_selected}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Write\_selected()}{Write\_selected()}}
+{\footnotesize\ttfamily void Write\+\_\+selected (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select }\end{DoxyParamCaption})}
+
+
+
+Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura) 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_ad936474e1d6b2457155bd72bff4dcd48}\label{main_8c_ad936474e1d6b2457155bd72bff4dcd48}} 
+\index{main.c@{main.c}!Write\_Temp@{Write\_Temp}}
+\index{Write\_Temp@{Write\_Temp}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Write\_Temp()}{Write\_Temp()}}
+{\footnotesize\ttfamily void Write\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a357d349153d351bd927d85ce50d6bc09}\label{main_8c_a357d349153d351bd927d85ce50d6bc09}} 
+\index{main.c@{main.c}!Write\_TimeDate@{Write\_TimeDate}}
+\index{Write\_TimeDate@{Write\_TimeDate}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Write\_TimeDate()}{Write\_TimeDate()}}
+{\footnotesize\ttfamily void Write\+\_\+\+Time\+Date (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pobiera czas z RTC i wypisuje na wyświetlacz. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{main_8c_a19e516b0237c156b24806281426b0e48}\label{main_8c_a19e516b0237c156b24806281426b0e48}} 
+\index{main.c@{main.c}!alarm@{alarm}}
+\index{alarm@{alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{alarm}{alarm}}
+{\footnotesize\ttfamily RTC\+\_\+\+Alarm\+Type\+Def alarm}
+
+\mbox{\Hypertarget{main_8c_accc1c57a243ff20c5f38a5609e377482}\label{main_8c_accc1c57a243ff20c5f38a5609e377482}} 
+\index{main.c@{main.c}!Alarm\_on@{Alarm\_on}}
+\index{Alarm\_on@{Alarm\_on}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Alarm\_on}{Alarm\_on}}
+{\footnotesize\ttfamily bool Alarm\+\_\+on = false}
+
+\mbox{\Hypertarget{main_8c_ab8ad26b150ebb02716be2e4a37d953bd}\label{main_8c_ab8ad26b150ebb02716be2e4a37d953bd}} 
+\index{main.c@{main.c}!date@{date}}
+\index{date@{date}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily RTC\+\_\+\+Date\+Type\+Def date}
+
+\mbox{\Hypertarget{main_8c_a6775c501c469a448021d6f96cbfeecbf}\label{main_8c_a6775c501c469a448021d6f96cbfeecbf}} 
+\index{main.c@{main.c}!Enable\_alarm@{Enable\_alarm}}
+\index{Enable\_alarm@{Enable\_alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Enable\_alarm}{Enable\_alarm}}
+{\footnotesize\ttfamily bool Enable\+\_\+alarm = false}
+
+\mbox{\Hypertarget{main_8c_acc86743988bff3b9a5d33d36c9f19318}\label{main_8c_acc86743988bff3b9a5d33d36c9f19318}} 
+\index{main.c@{main.c}!Enable\_change@{Enable\_change}}
+\index{Enable\_change@{Enable\_change}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Enable\_change}{Enable\_change}}
+{\footnotesize\ttfamily bool Enable\+\_\+change = false}
+
+\mbox{\Hypertarget{main_8c_ae3bdbafb2ea1bc4c2fafed28f7529174}\label{main_8c_ae3bdbafb2ea1bc4c2fafed28f7529174}} 
+\index{main.c@{main.c}!last\_ms@{last\_ms}}
+\index{last\_ms@{last\_ms}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{last\_ms}{last\_ms}}
+{\footnotesize\ttfamily uint32\+\_\+t last\+\_\+ms = 0}
+
+\mbox{\Hypertarget{main_8c_a54cf0316ff9dbdb759354467decf041f}\label{main_8c_a54cf0316ff9dbdb759354467decf041f}} 
+\index{main.c@{main.c}!new\_alarm@{new\_alarm}}
+\index{new\_alarm@{new\_alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{new\_alarm}{new\_alarm}}
+{\footnotesize\ttfamily RTC\+\_\+\+Alarm\+Type\+Def new\+\_\+alarm = \{0\}}
+
+\mbox{\Hypertarget{main_8c_a7894ebe6409a9ae743d85861726a2d72}\label{main_8c_a7894ebe6409a9ae743d85861726a2d72}} 
+\index{main.c@{main.c}!new\_date@{new\_date}}
+\index{new\_date@{new\_date}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{new\_date}{new\_date}}
+{\footnotesize\ttfamily RTC\+\_\+\+Date\+Type\+Def new\+\_\+date = \{0\}}
+
+\mbox{\Hypertarget{main_8c_a4def56d0b544e9a4d381c05c63cb29d7}\label{main_8c_a4def56d0b544e9a4d381c05c63cb29d7}} 
+\index{main.c@{main.c}!new\_time@{new\_time}}
+\index{new\_time@{new\_time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{new\_time}{new\_time}}
+{\footnotesize\ttfamily RTC\+\_\+\+Time\+Type\+Def new\+\_\+time = \{0\}}
+
+\mbox{\Hypertarget{main_8c_a8fbffcf15b445752944afe56a8bbb63e}\label{main_8c_a8fbffcf15b445752944afe56a8bbb63e}} 
+\index{main.c@{main.c}!Select\_alarm\_time@{Select\_alarm\_time}}
+\index{Select\_alarm\_time@{Select\_alarm\_time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Select\_alarm\_time}{Select\_alarm\_time}}
+{\footnotesize\ttfamily uint8\+\_\+t Select\+\_\+alarm\+\_\+time = 0}
+
+\mbox{\Hypertarget{main_8c_a86c6a0b153ec6341a65edf7a7c52055f}\label{main_8c_a86c6a0b153ec6341a65edf7a7c52055f}} 
+\index{main.c@{main.c}!Select\_time\_date@{Select\_time\_date}}
+\index{Select\_time\_date@{Select\_time\_date}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Select\_time\_date}{Select\_time\_date}}
+{\footnotesize\ttfamily uint8\+\_\+t Select\+\_\+time\+\_\+date = 0}
+
+\mbox{\Hypertarget{main_8c_a48262b82bd498f8c6172c1207e05f610}\label{main_8c_a48262b82bd498f8c6172c1207e05f610}} 
+\index{main.c@{main.c}!Select\_write@{Select\_write}}
+\index{Select\_write@{Select\_write}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Select\_write}{Select\_write}}
+{\footnotesize\ttfamily uint8\+\_\+t Select\+\_\+write = 0}
+
+\mbox{\Hypertarget{main_8c_a41948e891d463b07cf07312ca2d88b81}\label{main_8c_a41948e891d463b07cf07312ca2d88b81}} 
+\index{main.c@{main.c}!strColored@{strColored}}
+\index{strColored@{strColored}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{strColored}{strColored}}
+{\footnotesize\ttfamily char str\+Colored\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_ab722ba3dcbcc73642ec1a1046459da67}\label{main_8c_ab722ba3dcbcc73642ec1a1046459da67}} 
+\index{main.c@{main.c}!strDate@{strDate}}
+\index{strDate@{strDate}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{strDate}{strDate}}
+{\footnotesize\ttfamily char str\+Date\mbox{[}20\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_acfb9d6dfbdf287a2ad0b73ba208e5f28}\label{main_8c_acfb9d6dfbdf287a2ad0b73ba208e5f28}} 
+\index{main.c@{main.c}!strTemp@{strTemp}}
+\index{strTemp@{strTemp}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{strTemp}{strTemp}}
+{\footnotesize\ttfamily char str\+Temp\mbox{[}20\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_a1fb2ce456d06d5ca1708d27f39681df7}\label{main_8c_a1fb2ce456d06d5ca1708d27f39681df7}} 
+\index{main.c@{main.c}!strTime@{strTime}}
+\index{strTime@{strTime}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{strTime}{strTime}}
+{\footnotesize\ttfamily char str\+Time\mbox{[}20\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_a5781705b86349b4f6faa3fb1a01fbda8}\label{main_8c_a5781705b86349b4f6faa3fb1a01fbda8}} 
+\index{main.c@{main.c}!time@{time}}
+\index{time@{time}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily RTC\+\_\+\+Time\+Type\+Def time}
+

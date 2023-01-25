@@ -1,0 +1,47 @@
+\hypertarget{ds18b20_8h}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Inc/ds18b20.h}
+\label{ds18b20_8h}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ds18b20.h@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ds18b20.h}}
+{\ttfamily \#include \char`\"{}stm32l4xx.\+h\char`\"{}}\newline
+\doxysubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ds18b20_8h_a72a6d4032fd4e40bf769fa733a8c1c90}{DS18\+B20\+\_\+\+ROM\+\_\+\+CODE\+\_\+\+SIZE}}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ds18b20_8h_af895c292db6d4b39de89e9449733159f}{ds18b20\+\_\+read\+\_\+address}} (uint8\+\_\+t $\ast$rom\+\_\+code)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ds18b20_8h_a74a89b394554033c697447744f177d63}{ds18b20\+\_\+start\+\_\+measure}} (const uint8\+\_\+t $\ast$rom\+\_\+code)
+\item 
+float \mbox{\hyperlink{ds18b20_8h_a8ea44f1cc420a449e4847c9bee68c12b}{ds18b20\+\_\+get\+\_\+temp}} (const uint8\+\_\+t $\ast$rom\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji}
+\mbox{\Hypertarget{ds18b20_8h_a72a6d4032fd4e40bf769fa733a8c1c90}\label{ds18b20_8h_a72a6d4032fd4e40bf769fa733a8c1c90}} 
+\index{ds18b20.h@{ds18b20.h}!DS18B20\_ROM\_CODE\_SIZE@{DS18B20\_ROM\_CODE\_SIZE}}
+\index{DS18B20\_ROM\_CODE\_SIZE@{DS18B20\_ROM\_CODE\_SIZE}!ds18b20.h@{ds18b20.h}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_ROM\_CODE\_SIZE}{DS18B20\_ROM\_CODE\_SIZE}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+ROM\+\_\+\+CODE\+\_\+\+SIZE~8}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{ds18b20_8h_a8ea44f1cc420a449e4847c9bee68c12b}\label{ds18b20_8h_a8ea44f1cc420a449e4847c9bee68c12b}} 
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_get\_temp@{ds18b20\_get\_temp}}
+\index{ds18b20\_get\_temp@{ds18b20\_get\_temp}!ds18b20.h@{ds18b20.h}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_get\_temp()}{ds18b20\_get\_temp()}}
+{\footnotesize\ttfamily float ds18b20\+\_\+get\+\_\+temp (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ds18b20_8h_af895c292db6d4b39de89e9449733159f}\label{ds18b20_8h_af895c292db6d4b39de89e9449733159f}} 
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_read\_address@{ds18b20\_read\_address}}
+\index{ds18b20\_read\_address@{ds18b20\_read\_address}!ds18b20.h@{ds18b20.h}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_read\_address()}{ds18b20\_read\_address()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ds18b20\+\_\+read\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ds18b20_8h_a74a89b394554033c697447744f177d63}\label{ds18b20_8h_a74a89b394554033c697447744f177d63}} 
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_start\_measure@{ds18b20\_start\_measure}}
+\index{ds18b20\_start\_measure@{ds18b20\_start\_measure}!ds18b20.h@{ds18b20.h}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_start\_measure()}{ds18b20\_start\_measure()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ds18b20\+\_\+start\+\_\+measure (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+

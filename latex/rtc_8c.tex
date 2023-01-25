@@ -1,0 +1,66 @@
+\hypertarget{rtc_8c}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Src/rtc.c}
+\label{rtc_8c}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/rtc.c@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/rtc.c}}
+
+
+This file provides code for the configuration of the RTC instances.  
+
+
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rtc_8c_abf4accd1ce479030808e546f3d4642c9}{MX\+\_\+\+RTC\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{rtc_8c_a453bd7b485bdb49c54872947f546655c}{HAL\+\_\+\+RTC\+\_\+\+Msp\+Init}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$rtc\+Handle)
+\item 
+void \mbox{\hyperlink{rtc_8c_a17b728569834d5a73fb8713b6a41806f}{HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init}} (RTC\+\_\+\+Handle\+Type\+Def $\ast$rtc\+Handle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+RTC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{rtc_8c_aa0c7fca836406ade332e1e3f1039d8ab}{hrtc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+This file provides code for the configuration of the RTC instances. 
+
+\begin{DoxyAttention}{Uwaga}
+
+\end{DoxyAttention}
+Copyright (c) 2022 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{rtc_8c_a17b728569834d5a73fb8713b6a41806f}\label{rtc_8c_a17b728569834d5a73fb8713b6a41806f}} 
+\index{rtc.c@{rtc.c}!HAL\_RTC\_MspDeInit@{HAL\_RTC\_MspDeInit}}
+\index{HAL\_RTC\_MspDeInit@{HAL\_RTC\_MspDeInit}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_MspDeInit()}{HAL\_RTC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{rtc\+Handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtc_8c_a453bd7b485bdb49c54872947f546655c}\label{rtc_8c_a453bd7b485bdb49c54872947f546655c}} 
+\index{rtc.c@{rtc.c}!HAL\_RTC\_MspInit@{HAL\_RTC\_MspInit}}
+\index{HAL\_RTC\_MspInit@{HAL\_RTC\_MspInit}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_RTC\_MspInit()}{HAL\_RTC\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{RTC\+\_\+\+Handle\+Type\+Def $\ast$}]{rtc\+Handle }\end{DoxyParamCaption})}
+
+Initializes the peripherals clock\mbox{\Hypertarget{rtc_8c_abf4accd1ce479030808e546f3d4642c9}\label{rtc_8c_abf4accd1ce479030808e546f3d4642c9}} 
+\index{rtc.c@{rtc.c}!MX\_RTC\_Init@{MX\_RTC\_Init}}
+\index{MX\_RTC\_Init@{MX\_RTC\_Init}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{MX\_RTC\_Init()}{MX\_RTC\_Init()}}
+{\footnotesize\ttfamily void MX\+\_\+\+RTC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialize RTC Only
+
+Initialize RTC and set the Time and Date
+
+Enable the Alarm A
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{rtc_8c_aa0c7fca836406ade332e1e3f1039d8ab}\label{rtc_8c_aa0c7fca836406ade332e1e3f1039d8ab}} 
+\index{rtc.c@{rtc.c}!hrtc@{hrtc}}
+\index{hrtc@{hrtc}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{hrtc}{hrtc}}
+{\footnotesize\ttfamily RTC\+\_\+\+Handle\+Type\+Def hrtc}
+

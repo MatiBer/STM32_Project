@@ -1,0 +1,82 @@
+\hypertarget{ir_8c}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Src/ir.c}
+\label{ir_8c}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/ir.c@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/ir.c}}
+{\ttfamily \#include \char`\"{}ir.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+\doxysubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0}{pulse\+\_\+t}} \{ \newline
+\mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17}{PULSE\+\_\+9\+MS}}
+, \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca}{PULSE\+\_\+4\+MS}}
+, \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e}{PULSE\+\_\+2\+MS}}
+, \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2}{PULSE\+\_\+\+LONG}}
+, \newline
+\mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47}{PULSE\+\_\+\+SHORT}}
+, \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61}{PULSE\+\_\+\+ERROR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ir_8c_ad1bd36d4f62c7828e32939162a72864e}{ir\+\_\+tim\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{ir_8c_ab53f468c7a3aab848dba9c2fbcf4f202}{ir\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{ir_8c_aa8b83710cea36c59133a28328e3a8f96}{ir\+\_\+read}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja typów wyliczanych}
+\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0}} 
+\index{ir.c@{ir.c}!pulse\_t@{pulse\_t}}
+\index{pulse\_t@{pulse\_t}!ir.c@{ir.c}}
+\doxysubsubsection{\texorpdfstring{pulse\_t}{pulse\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ir_8c_a66dd244f9af70f859652951c82be2ba0}{pulse\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_9MS@{PULSE\_9MS}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_9MS@{PULSE\_9MS}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17}} 
+PULSE\+\_\+9\+MS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_4MS@{PULSE\_4MS}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_4MS@{PULSE\_4MS}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca}} 
+PULSE\+\_\+4\+MS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_2MS@{PULSE\_2MS}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_2MS@{PULSE\_2MS}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e}} 
+PULSE\+\_\+2\+MS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_LONG@{PULSE\_LONG}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_LONG@{PULSE\_LONG}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2}} 
+PULSE\+\_\+\+LONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_SHORT@{PULSE\_SHORT}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_SHORT@{PULSE\_SHORT}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47}} 
+PULSE\+\_\+\+SHORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSE\_ERROR@{PULSE\_ERROR}!ir.c@{ir.c}}\index{ir.c@{ir.c}!PULSE\_ERROR@{PULSE\_ERROR}}}\mbox{\Hypertarget{ir_8c_a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61}\label{ir_8c_a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61}} 
+PULSE\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{ir_8c_ab53f468c7a3aab848dba9c2fbcf4f202}\label{ir_8c_ab53f468c7a3aab848dba9c2fbcf4f202}} 
+\index{ir.c@{ir.c}!ir\_init@{ir\_init}}
+\index{ir\_init@{ir\_init}!ir.c@{ir.c}}
+\doxysubsubsection{\texorpdfstring{ir\_init()}{ir\_init()}}
+{\footnotesize\ttfamily void ir\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ir_8c_aa8b83710cea36c59133a28328e3a8f96}\label{ir_8c_aa8b83710cea36c59133a28328e3a8f96}} 
+\index{ir.c@{ir.c}!ir\_read@{ir\_read}}
+\index{ir\_read@{ir\_read}!ir.c@{ir.c}}
+\doxysubsubsection{\texorpdfstring{ir\_read()}{ir\_read()}}
+{\footnotesize\ttfamily int ir\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ir_8c_ad1bd36d4f62c7828e32939162a72864e}\label{ir_8c_ad1bd36d4f62c7828e32939162a72864e}} 
+\index{ir.c@{ir.c}!ir\_tim\_interrupt@{ir\_tim\_interrupt}}
+\index{ir\_tim\_interrupt@{ir\_tim\_interrupt}!ir.c@{ir.c}}
+\doxysubsubsection{\texorpdfstring{ir\_tim\_interrupt()}{ir\_tim\_interrupt()}}
+{\footnotesize\ttfamily void ir\+\_\+tim\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

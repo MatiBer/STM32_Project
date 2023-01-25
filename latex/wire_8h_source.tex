@@ -1,0 +1,27 @@
+\hypertarget{wire_8h_source}{}\doxysection{wire.\+h}
+\label{wire_8h_source}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/wire.h@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/wire.h}}
+\mbox{\hyperlink{wire_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Przesłanie\ sekwencji\ reset\ przez\ 1-\/wire}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ return\ -\/\ HAL\_OK/HAL\_ERROR\ zależnie\ od\ odp.\ czujnika}}
+\DoxyCodeLine{00007\ HAL\_StatusTypeDef\ \mbox{\hyperlink{wire_8h_ae8869e824bb6f4eda76e4700d39ccd86}{wire\_reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Odczytanie\ danych\ przez\ 1-\/wire}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Czyta\ 8\ bitów\ i\ połącz\ w\ bajt}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ return\ -\/\ odczytany\ bajt}}
+\DoxyCodeLine{00012\ uint8\_t\ \mbox{\hyperlink{wire_8h_a715791bd666fe3f077ab5018afb8c9b9}{wire\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Wyślij\ dane\ przez\ 1-\/wire}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ byte\ -\/\ bajt\ do\ wysłania}}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{wire_8h_a6f04eda512b05c912390b75620d627bb}{wire\_write}}(uint8\_t\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Policz\ sumę\ kontrolną}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ data\ -\/\ blok\ danych}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ len\ -\/\ długość\ bloku\ danych}}
+\DoxyCodeLine{00021\ uint8\_t\ \mbox{\hyperlink{wire_8h_a9b3d38cd8ac010678cde193a4a891345}{wire\_crc}}(\textcolor{keyword}{const}\ uint8\_t*\ data,\ \textcolor{keywordtype}{int}\ len);}
+
+\end{DoxyCode}

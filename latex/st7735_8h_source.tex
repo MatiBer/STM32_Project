@@ -1,0 +1,274 @@
+\hypertarget{st7735_8h_source}{}\doxysection{st7735.\+h}
+\label{st7735_8h_source}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/st7735.h@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/st7735.h}}
+\mbox{\hyperlink{st7735_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ vim:\ set\ ai\ et\ ts=4\ sw=4:\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_ST7735\_H\_\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_ST7735\_H\_\_}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fonts_8h}{fonts.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_MY\ \ 0x80}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_MX\ \ 0x40}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_MV\ \ 0x20}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_ML\ \ 0x10}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_RGB\ 0x00}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_BGR\ 0x08}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\_MH\ \ 0x04}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/***\ Redefine\ if\ necessary\ ***/}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ ST7735\_SPI\_PORT\ hspi2}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ SPI\_HandleTypeDef\ \mbox{\hyperlink{st7735_8h_a673d8974f91513579c0b700e86bf9d61}{ST7735\_SPI\_PORT}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ ST7735\_RES\_Pin\ \ \ \ \ \ \ GPIO\_PIN\_2}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ ST7735\_RES\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ST7735\_CS\_Pin\ \ \ \ \ \ \ \ GPIO\_PIN\_12}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ ST7735\_CS\_GPIO\_Port\ \ GPIOB}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ ST7735\_DC\_Pin\ \ \ \ \ \ \ \ GPIO\_PIN\_11}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ST7735\_DC\_GPIO\_Port\ \ GPIOB}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ AliExpress/eBay\ 1.8"{}\ display,\ default\ orientation}}
+\DoxyCodeLine{00028\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 160}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 0}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 0}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MY)}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ AliExpress/eBay\ 1.8"{}\ display,\ rotate\ right}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 0}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 0}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_MV)}}
+\DoxyCodeLine{00045\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ AliExpress/eBay\ 1.8"{}\ display,\ rotate\ left}}
+\DoxyCodeLine{00048\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 0}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 0}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MV)}}
+\DoxyCodeLine{00055\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ AliExpress/eBay\ 1.8"{}\ display,\ upside\ down}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 160}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 0}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 0}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (0)}}
+\DoxyCodeLine{00065\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ WaveShare\ ST7735S-\/based\ 1.8"{}\ display,\ default\ orientation}}
+\DoxyCodeLine{00068\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 160}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 2}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 1}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_RGB)}}
+\DoxyCodeLine{00075\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ WaveShare\ ST7735S-\/based\ 1.8"{}\ display,\ rotate\ right}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ ST7735\_XSTART\ 1}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ ST7735\_YSTART\ 2}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_RGB)}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ WaveShare\ ST7735S-\/based\ 1.8"{}\ display,\ rotate\ left}}
+\DoxyCodeLine{00088\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 1}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 2}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_RGB)}}
+\DoxyCodeLine{00095\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ WaveShare\ ST7735S-\/based\ 1.8"{}\ display,\ upside\ down}}
+\DoxyCodeLine{00098\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\#define\ ST7735\_IS\_160X128\ 1}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 160}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 2}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 1}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_RGB)}}
+\DoxyCodeLine{00105\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ 1.44"{}\ display,\ default\ orientation}}
+\DoxyCodeLine{00108\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\#define\ ST7735\_IS\_128X128\ 1}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 2}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 3}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00115\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ 1.44"{}\ display,\ rotate\ right}}
+\DoxyCodeLine{00118\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\#define\ ST7735\_IS\_128X128\ 1}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 3}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 2}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00125\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ 1.44"{}\ display,\ rotate\ left}}
+\DoxyCodeLine{00128\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\#define\ ST7735\_IS\_128X128\ 1}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 1}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 2}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00135\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ 1.44"{}\ display,\ upside\ down}}
+\DoxyCodeLine{00138\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\#define\ ST7735\_IS\_128X128\ 1}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 128}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 128}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 2}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 1}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00145\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ mini\ 160x80\ display\ (it's\ unlikely\ you\ want\ the\ default\ orientation)}}
+\DoxyCodeLine{00148\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\#define\ ST7735\_IS\_160X80\ 1}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 26}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 1}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 80}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 160\ }}
+\DoxyCodeLine{00154\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00155\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ mini\ 160x80,\ rotate\ left}}
+\DoxyCodeLine{00158\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\#define\ ST7735\_IS\_160X80\ 1}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 1}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 26}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 80}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MX\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00165\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ mini\ 160x80,\ rotate\ right\ }}
+\DoxyCodeLine{00168\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\#define\ ST7735\_IS\_160X80\ 1}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\#define\ ST7735\_XSTART\ 1}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\#define\ ST7735\_YSTART\ 26}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\#define\ ST7735\_WIDTH\ \ 160}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\#define\ ST7735\_HEIGHT\ 80}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\#define\ ST7735\_ROTATION\ (ST7735\_MADCTL\_MY\ |\ ST7735\_MADCTL\_MV\ |\ ST7735\_MADCTL\_BGR)}}
+\DoxyCodeLine{00175\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{comment}{/****************************/}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ ST7735\_NOP\ \ \ \ \ 0x00}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ ST7735\_SWRESET\ 0x01}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ ST7735\_RDDID\ \ \ 0x04}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ ST7735\_RDDST\ \ \ 0x09}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ ST7735\_SLPIN\ \ \ 0x10}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ ST7735\_SLPOUT\ \ 0x11}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ ST7735\_PTLON\ \ \ 0x12}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ ST7735\_NORON\ \ \ 0x13}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ST7735\_INVOFF\ \ 0x20}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ST7735\_INVON\ \ \ 0x21}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ST7735\_GAMSET\ \ 0x26}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ ST7735\_DISPOFF\ 0x28}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ ST7735\_DISPON\ \ 0x29}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ ST7735\_CASET\ \ \ 0x2A}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ ST7735\_RASET\ \ \ 0x2B}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ ST7735\_RAMWR\ \ \ 0x2C}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ ST7735\_RAMRD\ \ \ 0x2E}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ ST7735\_PTLAR\ \ \ 0x30}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ ST7735\_COLMOD\ \ 0x3A}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ ST7735\_MADCTL\ \ 0x36}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ ST7735\_FRMCTR1\ 0xB1}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ ST7735\_FRMCTR2\ 0xB2}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ ST7735\_FRMCTR3\ 0xB3}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ ST7735\_INVCTR\ \ 0xB4}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ ST7735\_DISSET5\ 0xB6}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR1\ \ 0xC0}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR2\ \ 0xC1}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR3\ \ 0xC2}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR4\ \ 0xC3}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR5\ \ 0xC4}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ST7735\_VMCTR1\ \ 0xC5}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ ST7735\_RDID1\ \ \ 0xDA}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ ST7735\_RDID2\ \ \ 0xDB}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ ST7735\_RDID3\ \ \ 0xDC}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ ST7735\_RDID4\ \ \ 0xDD}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ ST7735\_PWCTR6\ \ 0xFC}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ ST7735\_GMCTRP1\ 0xE0}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ ST7735\_GMCTRN1\ 0xE1}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{//\ Color\ definitions}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ ST7735\_BLACK\ \ \ 0x0000}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ ST7735\_BLUE\ \ \ \ 0x001F}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ ST7735\_RED\ \ \ \ \ 0xF800}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ ST7735\_GREEN\ \ \ 0x07E0}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ ST7735\_CYAN\ \ \ \ 0x07FF}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ ST7735\_MAGENTA\ 0xF81F}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ ST7735\_YELLOW\ \ 0xFFE0}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ ST7735\_WHITE\ \ \ 0xFFFF}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ ST7735\_COLOR565(r,\ g,\ b)\ (((r\ \&\ 0xF8)\ <<\ 8)\ |\ ((g\ \&\ 0xFC)\ <<\ 3)\ |\ ((b\ \&\ 0xF8)\ >>\ 3))}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9a1f9650af16ec8c38738d195a92b8cd42}{GAMMA\_10}}\ =\ 0x01,}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9a201d418aef7cce9df5f5c1c913e830f5}{GAMMA\_25}}\ =\ 0x02,}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9a304255103414734f567ba6c465659564}{GAMMA\_22}}\ =\ 0x04,}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9a67f56cd34e25129e040187cb99d93712}{GAMMA\_18}}\ =\ 0x08}
+\DoxyCodeLine{00242\ \}\ \mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9}{GammaDef}};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00245\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{comment}{//\ call\ before\ initializing\ any\ SPI\ devices}}
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a37a44640340fd043ef5ce296bc24a016}{ST7735\_Unselect}}();}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \textcolor{comment}{//inicjalizacja\ wyświetlacza}}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a0542eab2c844d26cfdef2db1a65c61db}{ST7735\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a5f14e27ee982d8839948ece78c0cbf48}{ST7735\_DrawPixel}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ color);}
+\DoxyCodeLine{00254\ \textcolor{comment}{//Wypisuje\ na\ wyświetlacz\ String\ o\ ustalonym\ położeniu,\ rozmiarze\ czcionki,\ kolorze\ napisu\ i\ tła}}
+\DoxyCodeLine{00255\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a58047936eeaceca83d61fb3e47d8215a}{ST7735\_WriteString}}(uint16\_t\ x,\ uint16\_t\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \mbox{\hyperlink{struct_font_def}{FontDef}}\ font,\ uint16\_t\ color,\ uint16\_t\ bgcolor);}
+\DoxyCodeLine{00256\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_ae91430b14654022f725f61a9b4eecaf7}{ST7735\_FillRectangle}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h,\ uint16\_t\ color);}
+\DoxyCodeLine{00257\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a74523215e8f7e3d810d8ac79688671f6}{ST7735\_FillRectangleFast}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h,\ uint16\_t\ color);}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a3a14506207ab49aee2c40700b5036271}{ST7735\_FillScreen}}(uint16\_t\ color);}
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_ab4664027af128dce09224594a1cf9a83}{ST7735\_FillScreenFast}}(uint16\_t\ color);}
+\DoxyCodeLine{00260\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a7e1f56549e23caf81fa4f1eadf85875f}{ST7735\_DrawImage}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ w,\ uint16\_t\ h,\ \textcolor{keyword}{const}\ uint16\_t*\ data);}
+\DoxyCodeLine{00261\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a1a037b05b226b6884774a979ca2051ed}{ST7735\_InvertColors}}(\textcolor{keywordtype}{bool}\ invert);}
+\DoxyCodeLine{00262\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{st7735_8h_a702e2cbb31f218cf8ebfb475e572f545}{ST7735\_SetGamma}}(\mbox{\hyperlink{st7735_8h_a6edcd1e79c2a0219e934502f2d5f15b9}{GammaDef}}\ gamma);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_ST7735\_H\_\_}}
+
+\end{DoxyCode}

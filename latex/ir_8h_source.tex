@@ -1,0 +1,31 @@
+\hypertarget{ir_8h_source}{}\doxysection{ir.\+h}
+\label{ir_8h_source}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ir.h@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ir.h}}
+\mbox{\hyperlink{ir_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l476xx.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Stałe\ opisujące\ klawisze}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ IR\_ONOFF\ \ \ \ \ \ 0x45}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ IR\_MENU\ \ \ \ \ \ \ 0x47}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ IR\_PLUS\ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IR\_BACK\ \ \ \ \ \ \ 0x43}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IR\_REWIND\ \ \ \ \ 0x07}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ IR\_PLAY\ \ \ \ \ \ \ 0x15}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ IR\_FORWARD\ \ \ \ 0x09}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ IR\_MINUS\ \ \ \ \ \ 0x19}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IR\_CANCEL\ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Procedura\ obsługi\ przerwania}}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ir_8h_ad1bd36d4f62c7828e32939162a72864e}{ir\_tim\_interrupt}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Inicjalizacja\ komunikacji\ przez\ podczerwień}}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ir_8h_ab53f468c7a3aab848dba9c2fbcf4f202}{ir\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Funkcja\ odczytująca\ dane}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ return\ -\/\ kod\ klawisza\ lub\ -\/1}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ir_8h_aa8b83710cea36c59133a28328e3a8f96}{ir\_read}}(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

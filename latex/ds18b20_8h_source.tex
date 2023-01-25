@@ -1,0 +1,26 @@
+\hypertarget{ds18b20_8h_source}{}\doxysection{ds18b20.\+h}
+\label{ds18b20_8h_source}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ds18b20.h@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Inc/ds18b20.h}}
+\mbox{\hyperlink{ds18b20_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ DS18B20\_ROM\_CODE\_SIZE\ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Odczytaj\ adres\ czujnika\ i\ policz\ CRC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ rom\_code\ -\/\ miejsce\ do\ zapisu\ odczytanych\ danych}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ return\ -\/\ HAL\_OK/HAL\_ERROR}}
+\DoxyCodeLine{00010\ HAL\_StatusTypeDef\ \mbox{\hyperlink{ds18b20_8h_af895c292db6d4b39de89e9449733159f}{ds18b20\_read\_address}}(uint8\_t*\ rom\_code);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Rozpocznij\ pomiar\ temperatury}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ rom\_code\ -\/\ adres\ czujnika\ lub\ NULL}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ return\ -\/\ HAL\_OK/HAL\_ERROR}}
+\DoxyCodeLine{00015\ HAL\_StatusTypeDef\ \mbox{\hyperlink{ds18b20_8h_a74a89b394554033c697447744f177d63}{ds18b20\_start\_measure}}(\textcolor{keyword}{const}\ uint8\_t*\ rom\_code);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Pobierz\ temperaturę}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ rom\_code\ -\/\ adres\ czujnika\ lub\ NULL}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ return\ -\/\ temperatura\ w\ stopniach\ Celsjusza}}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{ds18b20_8h_a8ea44f1cc420a449e4847c9bee68c12b}{ds18b20\_get\_temp}}(\textcolor{keyword}{const}\ uint8\_t*\ rom\_code);}
+
+\end{DoxyCode}

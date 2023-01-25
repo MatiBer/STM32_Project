@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zegar: Dokumentacja pliku C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt_stm32/ST7735/Core/Src/ir.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Zegar<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9e55412551dfb9e76e16c69cadf55fe8.html">projekt_stm32</a></li><li class="navelem"><a class="el" href="dir_615763fd8b3702c34d3e2f142a0748e4.html">ST7735</a></li><li class="navelem"><a class="el" href="dir_20bbc18043376f86f5640c810e01b110.html">Core</a></li><li class="navelem"><a class="el" href="dir_efb1b8ca05b995512e50028ad711f20b.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Wyliczenia</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku ir.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="ir_8h_source.html">ir.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tim_8h_source.html">tim.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Wyliczenia</h2></td></tr>
+<tr class="memitem:a66dd244f9af70f859652951c82be2ba0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0">pulse_t</a> { <br />
+&#160;&#160;<a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17">PULSE_9MS</a>
+, <a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca">PULSE_4MS</a>
+, <a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e">PULSE_2MS</a>
+, <a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2">PULSE_LONG</a>
+, <br />
+&#160;&#160;<a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47">PULSE_SHORT</a>
+, <a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61">PULSE_ERROR</a>
+<br />
+ }</td></tr>
+<tr class="separator:a66dd244f9af70f859652951c82be2ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ad1bd36d4f62c7828e32939162a72864e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir_8c.html#ad1bd36d4f62c7828e32939162a72864e">ir_tim_interrupt</a> (void)</td></tr>
+<tr class="separator:ad1bd36d4f62c7828e32939162a72864e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53f468c7a3aab848dba9c2fbcf4f202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir_8c.html#ab53f468c7a3aab848dba9c2fbcf4f202">ir_init</a> (void)</td></tr>
+<tr class="separator:ab53f468c7a3aab848dba9c2fbcf4f202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b83710cea36c59133a28328e3a8f96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ir_8c.html#aa8b83710cea36c59133a28328e3a8f96">ir_read</a> (void)</td></tr>
+<tr class="separator:aa8b83710cea36c59133a28328e3a8f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja typów wyliczanych</h2>
+<a id="a66dd244f9af70f859652951c82be2ba0" name="a66dd244f9af70f859652951c82be2ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66dd244f9af70f859652951c82be2ba0">&#9670;&#160;</a></span>pulse_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ir_8c.html#a66dd244f9af70f859652951c82be2ba0">pulse_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17" name="a66dd244f9af70f859652951c82be2ba0af318ddcb264a47a83ab5ddfceedfdb17"></a>PULSE_9MS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca" name="a66dd244f9af70f859652951c82be2ba0ae560023d50198d175a7a2fc6ffd785ca"></a>PULSE_4MS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e" name="a66dd244f9af70f859652951c82be2ba0a77fad8d675f5184665db420ce9d2c15e"></a>PULSE_2MS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2" name="a66dd244f9af70f859652951c82be2ba0ae8f3cf428ed5d279dad6448fc5ca45a2"></a>PULSE_LONG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47" name="a66dd244f9af70f859652951c82be2ba0a7574718ef3f6cf48dbabe8119fefda47"></a>PULSE_SHORT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61" name="a66dd244f9af70f859652951c82be2ba0a01a9980e253fbda6404733bf01ee4a61"></a>PULSE_ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ab53f468c7a3aab848dba9c2fbcf4f202" name="ab53f468c7a3aab848dba9c2fbcf4f202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53f468c7a3aab848dba9c2fbcf4f202">&#9670;&#160;</a></span>ir_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8b83710cea36c59133a28328e3a8f96" name="aa8b83710cea36c59133a28328e3a8f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b83710cea36c59133a28328e3a8f96">&#9670;&#160;</a></span>ir_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ir_read </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1bd36d4f62c7828e32939162a72864e" name="ad1bd36d4f62c7828e32939162a72864e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1bd36d4f62c7828e32939162a72864e">&#9670;&#160;</a></span>ir_tim_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ir_tim_interrupt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

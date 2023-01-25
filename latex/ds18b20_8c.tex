@@ -1,0 +1,89 @@
+\hypertarget{ds18b20_8c}{}\doxysection{Dokumentacja pliku C\+:/\+Users/matib/\+One\+Drive/\+Pulpit/\+Sem5/\+PMIK/projekt\+\_\+stm32/\+ST7735/\+Core/\+Src/ds18b20.c}
+\label{ds18b20_8c}\index{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/ds18b20.c@{C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt\_stm32/ST7735/Core/Src/ds18b20.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ds18b20.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wire.\+h\char`\"{}}\newline
+\doxysubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_af67ff473ba37804c2338d21b208b01e6}{DS18\+B20\+\_\+\+SCRATCHPAD\+\_\+\+SIZE}}~9
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_a5295aa5395ad249f8c733fff96b97743}{DS18\+B20\+\_\+\+READ\+\_\+\+ROM}}~0x33
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_ad953c5d005ae5395ef03d39660bc3550}{DS18\+B20\+\_\+\+MATCH\+\_\+\+ROM}}~0x55
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_ad822dbfea529cb7864bf82673e0cbe15}{DS18\+B20\+\_\+\+SKIP\+\_\+\+ROM}}~0x\+CC
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_a8f1209a169850233c400aad1b701c962}{DS18\+B20\+\_\+\+CONVERT\+\_\+T}}~0x44
+\item 
+\#define \mbox{\hyperlink{ds18b20_8c_a7c5504d07914ba640f58888cd09e6591}{DS18\+B20\+\_\+\+READ\+\_\+\+SCRATCHPAD}}~0x\+BE
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ds18b20_8c_af895c292db6d4b39de89e9449733159f}{ds18b20\+\_\+read\+\_\+address}} (uint8\+\_\+t $\ast$rom\+\_\+code)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ds18b20_8c_a74a89b394554033c697447744f177d63}{ds18b20\+\_\+start\+\_\+measure}} (const uint8\+\_\+t $\ast$rom\+\_\+code)
+\item 
+float \mbox{\hyperlink{ds18b20_8c_a8ea44f1cc420a449e4847c9bee68c12b}{ds18b20\+\_\+get\+\_\+temp}} (const uint8\+\_\+t $\ast$rom\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja definicji}
+\mbox{\Hypertarget{ds18b20_8c_a8f1209a169850233c400aad1b701c962}\label{ds18b20_8c_a8f1209a169850233c400aad1b701c962}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_CONVERT\_T@{DS18B20\_CONVERT\_T}}
+\index{DS18B20\_CONVERT\_T@{DS18B20\_CONVERT\_T}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_CONVERT\_T}{DS18B20\_CONVERT\_T}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+CONVERT\+\_\+T~0x44}
+
+\mbox{\Hypertarget{ds18b20_8c_ad953c5d005ae5395ef03d39660bc3550}\label{ds18b20_8c_ad953c5d005ae5395ef03d39660bc3550}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_MATCH\_ROM@{DS18B20\_MATCH\_ROM}}
+\index{DS18B20\_MATCH\_ROM@{DS18B20\_MATCH\_ROM}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_MATCH\_ROM}{DS18B20\_MATCH\_ROM}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+MATCH\+\_\+\+ROM~0x55}
+
+\mbox{\Hypertarget{ds18b20_8c_a5295aa5395ad249f8c733fff96b97743}\label{ds18b20_8c_a5295aa5395ad249f8c733fff96b97743}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_READ\_ROM@{DS18B20\_READ\_ROM}}
+\index{DS18B20\_READ\_ROM@{DS18B20\_READ\_ROM}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_READ\_ROM}{DS18B20\_READ\_ROM}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+READ\+\_\+\+ROM~0x33}
+
+\mbox{\Hypertarget{ds18b20_8c_a7c5504d07914ba640f58888cd09e6591}\label{ds18b20_8c_a7c5504d07914ba640f58888cd09e6591}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_READ\_SCRATCHPAD@{DS18B20\_READ\_SCRATCHPAD}}
+\index{DS18B20\_READ\_SCRATCHPAD@{DS18B20\_READ\_SCRATCHPAD}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_READ\_SCRATCHPAD}{DS18B20\_READ\_SCRATCHPAD}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+READ\+\_\+\+SCRATCHPAD~0x\+BE}
+
+\mbox{\Hypertarget{ds18b20_8c_af67ff473ba37804c2338d21b208b01e6}\label{ds18b20_8c_af67ff473ba37804c2338d21b208b01e6}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_SCRATCHPAD\_SIZE@{DS18B20\_SCRATCHPAD\_SIZE}}
+\index{DS18B20\_SCRATCHPAD\_SIZE@{DS18B20\_SCRATCHPAD\_SIZE}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_SCRATCHPAD\_SIZE}{DS18B20\_SCRATCHPAD\_SIZE}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+SCRATCHPAD\+\_\+\+SIZE~9}
+
+\mbox{\Hypertarget{ds18b20_8c_ad822dbfea529cb7864bf82673e0cbe15}\label{ds18b20_8c_ad822dbfea529cb7864bf82673e0cbe15}} 
+\index{ds18b20.c@{ds18b20.c}!DS18B20\_SKIP\_ROM@{DS18B20\_SKIP\_ROM}}
+\index{DS18B20\_SKIP\_ROM@{DS18B20\_SKIP\_ROM}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{DS18B20\_SKIP\_ROM}{DS18B20\_SKIP\_ROM}}
+{\footnotesize\ttfamily \#define DS18\+B20\+\_\+\+SKIP\+\_\+\+ROM~0x\+CC}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{ds18b20_8c_a8ea44f1cc420a449e4847c9bee68c12b}\label{ds18b20_8c_a8ea44f1cc420a449e4847c9bee68c12b}} 
+\index{ds18b20.c@{ds18b20.c}!ds18b20\_get\_temp@{ds18b20\_get\_temp}}
+\index{ds18b20\_get\_temp@{ds18b20\_get\_temp}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_get\_temp()}{ds18b20\_get\_temp()}}
+{\footnotesize\ttfamily float ds18b20\+\_\+get\+\_\+temp (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ds18b20_8c_af895c292db6d4b39de89e9449733159f}\label{ds18b20_8c_af895c292db6d4b39de89e9449733159f}} 
+\index{ds18b20.c@{ds18b20.c}!ds18b20\_read\_address@{ds18b20\_read\_address}}
+\index{ds18b20\_read\_address@{ds18b20\_read\_address}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_read\_address()}{ds18b20\_read\_address()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ds18b20\+\_\+read\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ds18b20_8c_a74a89b394554033c697447744f177d63}\label{ds18b20_8c_a74a89b394554033c697447744f177d63}} 
+\index{ds18b20.c@{ds18b20.c}!ds18b20\_start\_measure@{ds18b20\_start\_measure}}
+\index{ds18b20\_start\_measure@{ds18b20\_start\_measure}!ds18b20.c@{ds18b20.c}}
+\doxysubsubsection{\texorpdfstring{ds18b20\_start\_measure()}{ds18b20\_start\_measure()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ds18b20\+\_\+start\+\_\+measure (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{rom\+\_\+code }\end{DoxyParamCaption})}
+

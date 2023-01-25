@@ -1,0 +1,1059 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zegar: Dokumentacja pliku C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt_stm32/ST7735/Core/Src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Zegar<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9e55412551dfb9e76e16c69cadf55fe8.html">projekt_stm32</a></li><li class="navelem"><a class="el" href="dir_615763fd8b3702c34d3e2f142a0748e4.html">ST7735</a></li><li class="navelem"><a class="el" href="dir_20bbc18043376f86f5640c810e01b110.html">Core</a></li><li class="navelem"><a class="el" href="dir_efb1b8ca05b995512e50028ad711f20b.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku main.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>: Main program body  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rtc_8h_source.html">rtc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tim_8h_source.html">tim.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="st7735_8h_source.html">st7735.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fonts_8h_source.html">fonts.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="ir_8h_source.html">ir.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ds18b20_8h_source.html">ds18b20.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ae478ca2647e8d2f7dd1828ce43889a9e"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae478ca2647e8d2f7dd1828ce43889a9e">HAL_RTC_GetTime</a> (RTC_HandleTypeDef *<a class="el" href="rtc_8h.html#aa0c7fca836406ade332e1e3f1039d8ab">hrtc</a>, RTC_TimeTypeDef *sTime, uint32_t Format)</td></tr>
+<tr class="separator:ae478ca2647e8d2f7dd1828ce43889a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ec2e43a305aa55e8c2442a349fc505"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a07ec2e43a305aa55e8c2442a349fc505">HAL_RTC_GetDate</a> (RTC_HandleTypeDef *<a class="el" href="rtc_8h.html#aa0c7fca836406ade332e1e3f1039d8ab">hrtc</a>, RTC_DateTypeDef *sDate, uint32_t Format)</td></tr>
+<tr class="separator:a07ec2e43a305aa55e8c2442a349fc505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0fed98171a564decd2a6c9be9781d8"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afe0fed98171a564decd2a6c9be9781d8">HAL_RTC_SetTime</a> (RTC_HandleTypeDef *<a class="el" href="rtc_8h.html#aa0c7fca836406ade332e1e3f1039d8ab">hrtc</a>, RTC_TimeTypeDef *sTime, uint32_t Format)</td></tr>
+<tr class="separator:afe0fed98171a564decd2a6c9be9781d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4786b652ffee2d59da2c65dd78646405"><td class="memItemLeft" align="right" valign="top">HAL_StatusTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4786b652ffee2d59da2c65dd78646405">HAL_RTC_GetAlarm</a> (RTC_HandleTypeDef *<a class="el" href="rtc_8h.html#aa0c7fca836406ade332e1e3f1039d8ab">hrtc</a>, RTC_AlarmTypeDef *sAlarm, uint32_t Alarm, uint32_t Format)</td></tr>
+<tr class="separator:a4786b652ffee2d59da2c65dd78646405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
+<tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <br /></td></tr>
+<tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f78d6021bda79a39f1217ec234ba19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad6f78d6021bda79a39f1217ec234ba19">Active_alarm</a> (uint8_t remote)</td></tr>
+<tr class="memdesc:ad6f78d6021bda79a39f1217ec234ba19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Działanie alarmu.  <br /></td></tr>
+<tr class="separator:ad6f78d6021bda79a39f1217ec234ba19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3502991762581d364ca9be18cd70bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae3502991762581d364ca9be18cd70bfd">Turn_on_alarm</a> (void)</td></tr>
+<tr class="separator:ae3502991762581d364ca9be18cd70bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bcf31aff879907c9cc52478e907091e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5bcf31aff879907c9cc52478e907091e">Save_last_time</a> (void)</td></tr>
+<tr class="memdesc:a5bcf31aff879907c9cc52478e907091e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisanie ostatnich wartości zegara.  <br /></td></tr>
+<tr class="separator:a5bcf31aff879907c9cc52478e907091e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2c4efe11b736ddb1124e68ae93d18f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0e2c4efe11b736ddb1124e68ae93d18f">Save_last_alarm</a> (void)</td></tr>
+<tr class="memdesc:a0e2c4efe11b736ddb1124e68ae93d18f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechowuje wartości ustawionego alarmu.  <br /></td></tr>
+<tr class="separator:a0e2c4efe11b736ddb1124e68ae93d18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f19743abeb32e8ab906746d1f2b5dc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4f19743abeb32e8ab906746d1f2b5dc4">Color_Selected</a> (void)</td></tr>
+<tr class="memdesc:a4f19743abeb32e8ab906746d1f2b5dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zaznacza wybraną wartość zegara.  <br /></td></tr>
+<tr class="separator:a4f19743abeb32e8ab906746d1f2b5dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995e66ef071314b821f9b47583266b72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a995e66ef071314b821f9b47583266b72">Plus_Time</a> (void)</td></tr>
+<tr class="memdesc:a995e66ef071314b821f9b47583266b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwiększa wybraną wartość zegara.  <br /></td></tr>
+<tr class="separator:a995e66ef071314b821f9b47583266b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c91c671620186ee70560d29b2bf0c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5c91c671620186ee70560d29b2bf0c13">Minus_Time</a> (void)</td></tr>
+<tr class="memdesc:a5c91c671620186ee70560d29b2bf0c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmniejsza wybraną wartość zegara.  <br /></td></tr>
+<tr class="separator:a5c91c671620186ee70560d29b2bf0c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace7ccb99aa0dcc6504caacc1b3cf4a66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ace7ccb99aa0dcc6504caacc1b3cf4a66">Change_Time</a> (uint8_t remote)</td></tr>
+<tr class="memdesc:ace7ccb99aa0dcc6504caacc1b3cf4a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienianie czasu i daty.  <br /></td></tr>
+<tr class="separator:ace7ccb99aa0dcc6504caacc1b3cf4a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60c2c424d4b0918f7287f707cb8b1fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ab60c2c424d4b0918f7287f707cb8b1fe">Set_Alarm</a> (uint8_t remote)</td></tr>
+<tr class="memdesc:ab60c2c424d4b0918f7287f707cb8b1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawianie godziny i minuty alarmu.  <br /></td></tr>
+<tr class="separator:ab60c2c424d4b0918f7287f707cb8b1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c62b3128399db686b6652be88cfab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae4c62b3128399db686b6652be88cfab0">Hello</a> (void)</td></tr>
+<tr class="memdesc:ae4c62b3128399db686b6652be88cfab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla "Hello" na wyświetlaczu.  <br /></td></tr>
+<tr class="separator:ae4c62b3128399db686b6652be88cfab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357d349153d351bd927d85ce50d6bc09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a357d349153d351bd927d85ce50d6bc09">Write_TimeDate</a> (void)</td></tr>
+<tr class="memdesc:a357d349153d351bd927d85ce50d6bc09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera czas z RTC i wypisuje na wyświetlacz.  <br /></td></tr>
+<tr class="separator:a357d349153d351bd927d85ce50d6bc09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad936474e1d6b2457155bd72bff4dcd48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad936474e1d6b2457155bd72bff4dcd48">Write_Temp</a> (void)</td></tr>
+<tr class="memdesc:ad936474e1d6b2457155bd72bff4dcd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz.  <br /></td></tr>
+<tr class="separator:ad936474e1d6b2457155bd72bff4dcd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a77a2401a35ddd9bd0b8fc28331b81381">HAL_TIM_IC_CaptureCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="memdesc:a77a2401a35ddd9bd0b8fc28331b81381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni.  <br /></td></tr>
+<tr class="separator:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ec4672584d40da11a578d7bf0b5e8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a25ec4672584d40da11a578d7bf0b5e8a">Write_selected</a> (uint8_t select)</td></tr>
+<tr class="memdesc:a25ec4672584d40da11a578d7bf0b5e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura)  <br /></td></tr>
+<tr class="separator:a25ec4672584d40da11a578d7bf0b5e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c85caec96f08362025b809072590da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a72c85caec96f08362025b809072590da">Write_screen</a> (uint8_t remote)</td></tr>
+<tr class="memdesc:a72c85caec96f08362025b809072590da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustala co jest wyświetlane.  <br /></td></tr>
+<tr class="separator:a72c85caec96f08362025b809072590da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <br /></td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
+<tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <br /></td></tr>
+<tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a5781705b86349b4f6faa3fb1a01fbda8"><td class="memItemLeft" align="right" valign="top">RTC_TimeTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5781705b86349b4f6faa3fb1a01fbda8">time</a></td></tr>
+<tr class="separator:a5781705b86349b4f6faa3fb1a01fbda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ad26b150ebb02716be2e4a37d953bd"><td class="memItemLeft" align="right" valign="top">RTC_DateTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ab8ad26b150ebb02716be2e4a37d953bd">date</a></td></tr>
+<tr class="separator:ab8ad26b150ebb02716be2e4a37d953bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e516b0237c156b24806281426b0e48"><td class="memItemLeft" align="right" valign="top">RTC_AlarmTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a19e516b0237c156b24806281426b0e48">alarm</a></td></tr>
+<tr class="separator:a19e516b0237c156b24806281426b0e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb2ce456d06d5ca1708d27f39681df7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a1fb2ce456d06d5ca1708d27f39681df7">strTime</a> [20]</td></tr>
+<tr class="separator:a1fb2ce456d06d5ca1708d27f39681df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab722ba3dcbcc73642ec1a1046459da67"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ab722ba3dcbcc73642ec1a1046459da67">strDate</a> [20]</td></tr>
+<tr class="separator:ab722ba3dcbcc73642ec1a1046459da67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb9d6dfbdf287a2ad0b73ba208e5f28"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#acfb9d6dfbdf287a2ad0b73ba208e5f28">strTemp</a> [20]</td></tr>
+<tr class="separator:acfb9d6dfbdf287a2ad0b73ba208e5f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41948e891d463b07cf07312ca2d88b81"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a41948e891d463b07cf07312ca2d88b81">strColored</a> [10]</td></tr>
+<tr class="separator:a41948e891d463b07cf07312ca2d88b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48262b82bd498f8c6172c1207e05f610"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a48262b82bd498f8c6172c1207e05f610">Select_write</a> = 0</td></tr>
+<tr class="separator:a48262b82bd498f8c6172c1207e05f610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc86743988bff3b9a5d33d36c9f19318"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#acc86743988bff3b9a5d33d36c9f19318">Enable_change</a> = false</td></tr>
+<tr class="separator:acc86743988bff3b9a5d33d36c9f19318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6775c501c469a448021d6f96cbfeecbf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6775c501c469a448021d6f96cbfeecbf">Enable_alarm</a> = false</td></tr>
+<tr class="separator:a6775c501c469a448021d6f96cbfeecbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc1c57a243ff20c5f38a5609e377482"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#accc1c57a243ff20c5f38a5609e377482">Alarm_on</a> = false</td></tr>
+<tr class="separator:accc1c57a243ff20c5f38a5609e377482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4def56d0b544e9a4d381c05c63cb29d7"><td class="memItemLeft" align="right" valign="top">RTC_TimeTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4def56d0b544e9a4d381c05c63cb29d7">new_time</a> = {0}</td></tr>
+<tr class="separator:a4def56d0b544e9a4d381c05c63cb29d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7894ebe6409a9ae743d85861726a2d72"><td class="memItemLeft" align="right" valign="top">RTC_DateTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a7894ebe6409a9ae743d85861726a2d72">new_date</a> = {0}</td></tr>
+<tr class="separator:a7894ebe6409a9ae743d85861726a2d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54cf0316ff9dbdb759354467decf041f"><td class="memItemLeft" align="right" valign="top">RTC_AlarmTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a54cf0316ff9dbdb759354467decf041f">new_alarm</a> = {0}</td></tr>
+<tr class="separator:a54cf0316ff9dbdb759354467decf041f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c6a0b153ec6341a65edf7a7c52055f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a86c6a0b153ec6341a65edf7a7c52055f">Select_time_date</a> = 0</td></tr>
+<tr class="separator:a86c6a0b153ec6341a65edf7a7c52055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fbffcf15b445752944afe56a8bbb63e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8fbffcf15b445752944afe56a8bbb63e">Select_alarm_time</a> = 0</td></tr>
+<tr class="separator:a8fbffcf15b445752944afe56a8bbb63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bdbafb2ea1bc4c2fafed28f7529174"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae3bdbafb2ea1bc4c2fafed28f7529174">last_ms</a> = 0</td></tr>
+<tr class="separator:ae3bdbafb2ea1bc4c2fafed28f7529174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>: Main program body </p>
+<dl class="section attention"><dt>Uwaga</dt><dd></dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>: Mateusz Berliński</dd></dl>
+<p>@title : Zegar</p>
+<p>@description: Tematem projektu jest zegar. W normalnej pracy będzie wyświetlał aktualną godzinę i datę. Będzie można go przełączyć na wyświetlanie temperatury. Sterowanie odbywa się przez pilot podczerwieni. Dane pokazywane są na wyswietlaczu tft przy pomocy SPI. Na zegarze można ustawiać date, godzinę i alarmy. Alarmy włączają brzęczyk, a na ekranie pojawia się komunikat.</p>
+<p>Copyright (c) 2022 STMicroelectronics. All rights reserved.</p>
+<p>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </p>
+</div><h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ad6f78d6021bda79a39f1217ec234ba19" name="ad6f78d6021bda79a39f1217ec234ba19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f78d6021bda79a39f1217ec234ba19">&#9670;&#160;</a></span>Active_alarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Active_alarm </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>remote</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Działanie alarmu. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace7ccb99aa0dcc6504caacc1b3cf4a66" name="ace7ccb99aa0dcc6504caacc1b3cf4a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace7ccb99aa0dcc6504caacc1b3cf4a66">&#9670;&#160;</a></span>Change_Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Change_Time </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>remote</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zmienianie czasu i daty. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4f19743abeb32e8ab906746d1f2b5dc4" name="a4f19743abeb32e8ab906746d1f2b5dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f19743abeb32e8ab906746d1f2b5dc4">&#9670;&#160;</a></span>Color_Selected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Color_Selected </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zaznacza wybraną wartość zegara. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1730ffe1e560465665eb47d9264826f9" name="a1730ffe1e560465665eb47d9264826f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&#160;</a></span>Error_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Error_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is executed in case of error occurrence. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4786b652ffee2d59da2c65dd78646405" name="a4786b652ffee2d59da2c65dd78646405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4786b652ffee2d59da2c65dd78646405">&#9670;&#160;</a></span>HAL_RTC_GetAlarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HAL_StatusTypeDef HAL_RTC_GetAlarm </td>
+          <td>(</td>
+          <td class="paramtype">RTC_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hrtc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC_AlarmTypeDef *&#160;</td>
+          <td class="paramname"><em>sAlarm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Alarm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07ec2e43a305aa55e8c2442a349fc505" name="a07ec2e43a305aa55e8c2442a349fc505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ec2e43a305aa55e8c2442a349fc505">&#9670;&#160;</a></span>HAL_RTC_GetDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HAL_StatusTypeDef HAL_RTC_GetDate </td>
+          <td>(</td>
+          <td class="paramtype">RTC_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hrtc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC_DateTypeDef *&#160;</td>
+          <td class="paramname"><em>sDate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae478ca2647e8d2f7dd1828ce43889a9e" name="ae478ca2647e8d2f7dd1828ce43889a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae478ca2647e8d2f7dd1828ce43889a9e">&#9670;&#160;</a></span>HAL_RTC_GetTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HAL_StatusTypeDef HAL_RTC_GetTime </td>
+          <td>(</td>
+          <td class="paramtype">RTC_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hrtc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC_TimeTypeDef *&#160;</td>
+          <td class="paramname"><em>sTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe0fed98171a564decd2a6c9be9781d8" name="afe0fed98171a564decd2a6c9be9781d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0fed98171a564decd2a6c9be9781d8">&#9670;&#160;</a></span>HAL_RTC_SetTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HAL_StatusTypeDef HAL_RTC_SetTime </td>
+          <td>(</td>
+          <td class="paramtype">RTC_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hrtc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC_TimeTypeDef *&#160;</td>
+          <td class="paramname"><em>sTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77a2401a35ddd9bd0b8fc28331b81381" name="a77a2401a35ddd9bd0b8fc28331b81381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a2401a35ddd9bd0b8fc28331b81381">&#9670;&#160;</a></span>HAL_TIM_IC_CaptureCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_IC_CaptureCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4c62b3128399db686b6652be88cfab0" name="ae4c62b3128399db686b6652be88cfab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c62b3128399db686b6652be88cfab0">&#9670;&#160;</a></span>Hello()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hello </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyświetla "Hello" na wyświetlaczu. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The application entry point. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5c91c671620186ee70560d29b2bf0c13" name="a5c91c671620186ee70560d29b2bf0c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c91c671620186ee70560d29b2bf0c13">&#9670;&#160;</a></span>Minus_Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Minus_Time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zmniejsza wybraną wartość zegara. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a995e66ef071314b821f9b47583266b72" name="a995e66ef071314b821f9b47583266b72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a995e66ef071314b821f9b47583266b72">&#9670;&#160;</a></span>Plus_Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Plus_Time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwiększa wybraną wartość zegara. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0e2c4efe11b736ddb1124e68ae93d18f" name="a0e2c4efe11b736ddb1124e68ae93d18f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2c4efe11b736ddb1124e68ae93d18f">&#9670;&#160;</a></span>Save_last_alarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Save_last_alarm </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przechowuje wartości ustawionego alarmu. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5bcf31aff879907c9cc52478e907091e" name="a5bcf31aff879907c9cc52478e907091e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bcf31aff879907c9cc52478e907091e">&#9670;&#160;</a></span>Save_last_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Save_last_time </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zapisanie ostatnich wartości zegara. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab60c2c424d4b0918f7287f707cb8b1fe" name="ab60c2c424d4b0918f7287f707cb8b1fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60c2c424d4b0918f7287f707cb8b1fe">&#9670;&#160;</a></span>Set_Alarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Set_Alarm </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>remote</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawianie godziny i minuty alarmu. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a70af21c671abfcc773614a9a4f63d920" name="a70af21c671abfcc773614a9a4f63d920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70af21c671abfcc773614a9a4f63d920">&#9670;&#160;</a></span>SystemClock_Config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemClock_Config </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System Clock Configuration. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Configure the main internal regulator output voltage</p>
+<p>Configure LSE Drive Capability</p>
+<p>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</p>
+<p>Initializes the CPU, AHB and APB buses clocks</p>
+
+</div>
+</div>
+<a id="ae3502991762581d364ca9be18cd70bfd" name="ae3502991762581d364ca9be18cd70bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3502991762581d364ca9be18cd70bfd">&#9670;&#160;</a></span>Turn_on_alarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Turn_on_alarm </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72c85caec96f08362025b809072590da" name="a72c85caec96f08362025b809072590da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c85caec96f08362025b809072590da">&#9670;&#160;</a></span>Write_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Write_screen </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>remote</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustala co jest wyświetlane. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a25ec4672584d40da11a578d7bf0b5e8a" name="a25ec4672584d40da11a578d7bf0b5e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ec4672584d40da11a578d7bf0b5e8a">&#9670;&#160;</a></span>Write_selected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Write_selected </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>select</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura) </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad936474e1d6b2457155bd72bff4dcd48" name="ad936474e1d6b2457155bd72bff4dcd48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad936474e1d6b2457155bd72bff4dcd48">&#9670;&#160;</a></span>Write_Temp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Write_Temp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a357d349153d351bd927d85ce50d6bc09" name="a357d349153d351bd927d85ce50d6bc09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a357d349153d351bd927d85ce50d6bc09">&#9670;&#160;</a></span>Write_TimeDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Write_TimeDate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera czas z RTC i wypisuje na wyświetlacz. </p>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="a19e516b0237c156b24806281426b0e48" name="a19e516b0237c156b24806281426b0e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e516b0237c156b24806281426b0e48">&#9670;&#160;</a></span>alarm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_AlarmTypeDef alarm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accc1c57a243ff20c5f38a5609e377482" name="accc1c57a243ff20c5f38a5609e377482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc1c57a243ff20c5f38a5609e377482">&#9670;&#160;</a></span>Alarm_on</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Alarm_on = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8ad26b150ebb02716be2e4a37d953bd" name="ab8ad26b150ebb02716be2e4a37d953bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ad26b150ebb02716be2e4a37d953bd">&#9670;&#160;</a></span>date</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_DateTypeDef date</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6775c501c469a448021d6f96cbfeecbf" name="a6775c501c469a448021d6f96cbfeecbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6775c501c469a448021d6f96cbfeecbf">&#9670;&#160;</a></span>Enable_alarm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enable_alarm = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc86743988bff3b9a5d33d36c9f19318" name="acc86743988bff3b9a5d33d36c9f19318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc86743988bff3b9a5d33d36c9f19318">&#9670;&#160;</a></span>Enable_change</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enable_change = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3bdbafb2ea1bc4c2fafed28f7529174" name="ae3bdbafb2ea1bc4c2fafed28f7529174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bdbafb2ea1bc4c2fafed28f7529174">&#9670;&#160;</a></span>last_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t last_ms = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54cf0316ff9dbdb759354467decf041f" name="a54cf0316ff9dbdb759354467decf041f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54cf0316ff9dbdb759354467decf041f">&#9670;&#160;</a></span>new_alarm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_AlarmTypeDef new_alarm = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7894ebe6409a9ae743d85861726a2d72" name="a7894ebe6409a9ae743d85861726a2d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7894ebe6409a9ae743d85861726a2d72">&#9670;&#160;</a></span>new_date</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_DateTypeDef new_date = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4def56d0b544e9a4d381c05c63cb29d7" name="a4def56d0b544e9a4d381c05c63cb29d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4def56d0b544e9a4d381c05c63cb29d7">&#9670;&#160;</a></span>new_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_TimeTypeDef new_time = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fbffcf15b445752944afe56a8bbb63e" name="a8fbffcf15b445752944afe56a8bbb63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbffcf15b445752944afe56a8bbb63e">&#9670;&#160;</a></span>Select_alarm_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Select_alarm_time = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86c6a0b153ec6341a65edf7a7c52055f" name="a86c6a0b153ec6341a65edf7a7c52055f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c6a0b153ec6341a65edf7a7c52055f">&#9670;&#160;</a></span>Select_time_date</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Select_time_date = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48262b82bd498f8c6172c1207e05f610" name="a48262b82bd498f8c6172c1207e05f610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48262b82bd498f8c6172c1207e05f610">&#9670;&#160;</a></span>Select_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Select_write = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41948e891d463b07cf07312ca2d88b81" name="a41948e891d463b07cf07312ca2d88b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41948e891d463b07cf07312ca2d88b81">&#9670;&#160;</a></span>strColored</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char strColored[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab722ba3dcbcc73642ec1a1046459da67" name="ab722ba3dcbcc73642ec1a1046459da67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab722ba3dcbcc73642ec1a1046459da67">&#9670;&#160;</a></span>strDate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char strDate[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfb9d6dfbdf287a2ad0b73ba208e5f28" name="acfb9d6dfbdf287a2ad0b73ba208e5f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb9d6dfbdf287a2ad0b73ba208e5f28">&#9670;&#160;</a></span>strTemp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char strTemp[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fb2ce456d06d5ca1708d27f39681df7" name="a1fb2ce456d06d5ca1708d27f39681df7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb2ce456d06d5ca1708d27f39681df7">&#9670;&#160;</a></span>strTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char strTime[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5781705b86349b4f6faa3fb1a01fbda8" name="a5781705b86349b4f6faa3fb1a01fbda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5781705b86349b4f6faa3fb1a01fbda8">&#9670;&#160;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC_TimeTypeDef time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Zegar: Plik źródłowy C:/Users/matib/OneDrive/Pulpit/Sem5/PMIK/projekt_stm32/ST7735/Core/Inc/ir.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Zegar<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9e55412551dfb9e76e16c69cadf55fe8.html">projekt_stm32</a></li><li class="navelem"><a class="el" href="dir_615763fd8b3702c34d3e2f142a0748e4.html">ST7735</a></li><li class="navelem"><a class="el" href="dir_20bbc18043376f86f5640c810e01b110.html">Core</a></li><li class="navelem"><a class="el" href="dir_4fe1c2761d3d5fc0158dfa722c33e5c0.html">Inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ir.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ir_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;stm32l476xx.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Stałe opisujące klawisze</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="ir_8h.html#a96f90fbdf622b5345bc7254b04f191e3">    6</a></span><span class="preprocessor">#define IR_ONOFF      0x45</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="ir_8h.html#ad67c20332d90667b95be86be89e071e9">    7</a></span><span class="preprocessor">#define IR_MENU       0x47</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="ir_8h.html#adf63cfbe5649356dbd70b9fac771a6d4">    8</a></span><span class="preprocessor">#define IR_PLUS       0x40</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="ir_8h.html#ac445a0523d60b61f8b43850e11ed5ef7">    9</a></span><span class="preprocessor">#define IR_BACK       0x43</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="ir_8h.html#aee4df27b9006b813a32c9fe2867fba91">   10</a></span><span class="preprocessor">#define IR_REWIND     0x07</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="ir_8h.html#ae763880d24d553aef4551f846e12b7a9">   11</a></span><span class="preprocessor">#define IR_PLAY       0x15</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="ir_8h.html#a76d69346f1fd517c4539378d227f15cb">   12</a></span><span class="preprocessor">#define IR_FORWARD    0x09</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="ir_8h.html#a17b135930bc2308a449d3ca5c148625e">   13</a></span><span class="preprocessor">#define IR_MINUS      0x19</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="ir_8h.html#a1de3e2c8409dbb001cd55874fded04ef">   14</a></span><span class="preprocessor">#define IR_CANCEL     0x0D</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Procedura obsługi przerwania</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="ir_8h.html#ad1bd36d4f62c7828e32939162a72864e">ir_tim_interrupt</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// Inicjalizacja komunikacji przez podczerwień</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="ir_8h.html#ab53f468c7a3aab848dba9c2fbcf4f202">ir_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// Funkcja odczytująca dane</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// return - kod klawisza lub -1</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">int</span> <a class="code hl_function" href="ir_8h.html#aa8b83710cea36c59133a28328e3a8f96">ir_read</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="air_8h_html_aa8b83710cea36c59133a28328e3a8f96"><div class="ttname"><a href="ir_8h.html#aa8b83710cea36c59133a28328e3a8f96">ir_read</a></div><div class="ttdeci">int ir_read(void)</div><div class="ttdef"><b>Definition:</b> ir.c:74</div></div>
+<div class="ttc" id="air_8h_html_ab53f468c7a3aab848dba9c2fbcf4f202"><div class="ttname"><a href="ir_8h.html#ab53f468c7a3aab848dba9c2fbcf4f202">ir_init</a></div><div class="ttdeci">void ir_init(void)</div><div class="ttdef"><b>Definition:</b> ir.c:67</div></div>
+<div class="ttc" id="air_8h_html_ad1bd36d4f62c7828e32939162a72864e"><div class="ttname"><a href="ir_8h.html#ad1bd36d4f62c7828e32939162a72864e">ir_tim_interrupt</a></div><div class="ttdeci">void ir_tim_interrupt(void)</div><div class="ttdef"><b>Definition:</b> ir.c:34</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
