@@ -52,14 +52,7 @@ HAL_StatusTypeDef HAL_RTC_GetDate(RTC_HandleTypeDef *hrtc, RTC_DateTypeDef *sDat
 HAL_StatusTypeDef HAL_RTC_SetTime(RTC_HandleTypeDef *hrtc, RTC_TimeTypeDef *sTime, uint32_t Format);
 HAL_StatusTypeDef HAL_RTC_GetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Alarm, uint32_t Format);
 
-typedef enum {
-	PULSE_9MS,
-	PULSE_4MS,
-	PULSE_2MS,
-	PULSE_LONG,
-	PULSE_SHORT,
-	PULSE_ERROR,
-}pulse_t;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -77,20 +70,20 @@ typedef enum {
 RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
 RTC_AlarmTypeDef alarm;
-char strTime[20];
-char strDate[20];
-char strTemp[20];
-char strColored[10];
-uint8_t Select_write = 0;
-bool Enable_change = false;
-bool Enable_alarm = false;
-bool Alarm_on = false;
-RTC_TimeTypeDef new_time = {0};
-RTC_DateTypeDef new_date = {0};
-RTC_AlarmTypeDef new_alarm = {0};
-uint8_t Select_time_date = 0;
-uint8_t Select_alarm_time = 0;
-uint32_t last_ms = 0;
+char strTime[20];//przechowuje czas jako tablice char
+char strDate[20];//przechowuje date jako tablice char
+char strTemp[20];//przechowuje temperature jako tablice char
+char strColored[10];//przechowuje zaznaczone wartości jako tablice char
+uint8_t Select_write = 0;//wybór danych do wyświetlenia 0-czas, 1-temperatura
+bool Enable_change = false;//flaga czy jest zmieniany czas
+bool Enable_alarm = false;//flaga czy ustawiany jest alarm
+bool Alarm_on = false;//flaga czy włączony jest alarm
+RTC_TimeTypeDef new_time = {0};//wartość czasu którą zmieniamy
+RTC_DateTypeDef new_date = {0};//data którą zmieniamy
+RTC_AlarmTypeDef new_alarm = {0};//alarm który zmieniamy
+uint8_t Select_time_date = 0;//wybór wartości czasu 0-godziny, 1-minuty, 2-sekundy, 3-dni, 4-miesiace, 5-lata
+uint8_t Select_alarm_time = 0;//wybór wartości alarmu 0-godziny, 1-minuty
+uint32_t last_ms = 0;//przechowuje czas z Systick
 
 /* USER CODE END PV */
 
@@ -102,15 +95,20 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/**
+  * @brief Działanie alarmu
+  * @retval None
+  */
 void Active_alarm(uint8_t remote)
 {
 	uint32_t now = HAL_GetTick();
 	if(now - last_ms >= 100) {
-		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);//Miga dioda
 		last_ms = now;
 	}
 
-	if(remote == IR_BACK){
+	if(remote == IR_BACK){//Wyłączenie alarmu
 		Alarm_on = false;
 		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, RESET);
 	}
@@ -122,6 +120,11 @@ void Turn_on_alarm(void)
 	Alarm_on = true;
 }
 
+/**
+  * @brief Zapisanie ostatnich wartości zegara
+  * @retval None
+  */
+
 void Save_last_time(void)
 {
 	new_time.Hours = time.Hours;
@@ -132,6 +135,11 @@ void Save_last_time(void)
 	new_date.Year = date.Year;
 }
 
+/**
+  * @brief Przechowuje wartości ustawionego alarmu
+  * @retval None
+  */
+
 void Save_last_alarm(void)
 {
 	HAL_RTC_GetAlarm(&hrtc, &alarm, RTC_ALARM_A, RTC_FORMAT_BIN);
@@ -139,6 +147,10 @@ void Save_last_alarm(void)
 	new_alarm.AlarmTime.Minutes = alarm.AlarmTime.Minutes;
 }
 
+/**
+  * @brief Zaznacza wybraną wartość zegara
+  * @retval None
+  */
 void Color_Selected(void)
 {
 	if(Select_time_date == 0){
@@ -173,6 +185,10 @@ void Color_Selected(void)
 	}
 }
 
+/**
+  * @brief Zwiększa wybraną wartość zegara
+  * @retval None
+  */
 void Plus_Time(void)
 {
 	if(Select_time_date == 0)
@@ -189,6 +205,10 @@ void Plus_Time(void)
 		new_date.Year = (new_date.Year +1) % 100;
 }
 
+/**
+  * @brief Zmniejsza wybraną wartość zegara
+  * @retval None
+  */
 void Minus_Time(void)
 {
 	if(Select_time_date == 0){
@@ -217,9 +237,13 @@ void Minus_Time(void)
 	}
 }
 
+/**
+  * @brief Zmienianie czasu i daty
+  * @retval None
+  */
 void Change_Time(uint8_t remote)
 {
-	if(remote == IR_BACK)
+	if(remote == IR_BACK)//anulowanie zmieniania czasu
 		Enable_change = false;
 
 	if(remote == IR_PLUS){
@@ -230,17 +254,17 @@ void Change_Time(uint8_t remote)
 		Minus_Time();
 	}
 
-	if(remote == IR_FORWARD)
+	if(remote == IR_FORWARD)//przełącza wartość którą zmieniamy
 		Select_time_date = (Select_time_date +1) % 6;
 
-	if(remote == IR_REWIND){
+	if(remote == IR_REWIND){//przełącza wartość którą zmieniamy
 		if(Select_time_date == 0) Select_time_date = 6;
 		Select_time_date = (Select_time_date -1);
 	}
 
 	Color_Selected();
 
-	if(remote == IR_PLAY){
+	if(remote == IR_PLAY){//Wczytuje zmienioną wartość do zegara
 		HAL_RTC_SetTime(&hrtc, &new_time, RTC_FORMAT_BIN);
 		HAL_RTC_SetDate(&hrtc, &new_date, RTC_FORMAT_BIN);
 		Select_time_date = 0;
@@ -248,19 +272,23 @@ void Change_Time(uint8_t remote)
 	}
 }
 
+/**
+  * @brief Ustawianie godziny i minuty alarmu
+  * @retval None
+  */
 void Set_Alarm(uint8_t remote)
 {
-	if(remote == IR_BACK)
+	if(remote == IR_BACK)//anuluje ustawianie alarmu bez zmiany
 		Enable_alarm = false;
 
-	if(remote == IR_PLUS){
+	if(remote == IR_PLUS){//zwiększa wybraną wartość
 		if(Select_alarm_time == 0)
 			new_alarm.AlarmTime.Hours = (new_alarm.AlarmTime.Hours +1) % 24;
 		else if(Select_alarm_time == 1)
 			new_alarm.AlarmTime.Minutes = (new_alarm.AlarmTime.Minutes +1) % 60;
 	}
 
-	if(remote == IR_MINUS){
+	if(remote == IR_MINUS){//zmniejsza wybraną wartość
 		if(Select_alarm_time == 0){
 			if(new_alarm.AlarmTime.Hours == 0) new_alarm.AlarmTime.Hours = 24;
 			new_alarm.AlarmTime.Hours = (new_alarm.AlarmTime.Hours -1);
@@ -271,16 +299,16 @@ void Set_Alarm(uint8_t remote)
 		}
 	}
 
-	if(remote == IR_FORWARD)
+	if(remote == IR_FORWARD)//przełącza wartość którą zmieniamy
 		Select_alarm_time = (Select_alarm_time +1) % 2;
 
-	if(remote == IR_REWIND){
+	if(remote == IR_REWIND){//przełącza wartość którą zmieniamy
 		if(Select_alarm_time == 0) Select_alarm_time = 2;
 		Select_alarm_time = (Select_alarm_time -1);
 	}
 
-	if(remote == IR_CANCEL){
-		HAL_RTC_SetAlarm(&hrtc, &new_alarm, RTC_FORMAT_BIN); //to nie działa - ta funkcja nie zapisuje nowego alarmu
+	if(remote == IR_CANCEL){//Ustawia alarm
+		HAL_RTC_SetAlarm(&hrtc, &new_alarm, RTC_FORMAT_BIN);
 		Select_alarm_time = 0;
 		Enable_alarm = false;
 	}
@@ -288,7 +316,7 @@ void Set_Alarm(uint8_t remote)
 	sprintf(strTime,"%02d:%02d:%02d", new_alarm.AlarmTime.Hours, new_alarm.AlarmTime.Minutes, new_alarm.AlarmTime.Seconds);
 	ST7735_WriteString(15, 35, strTime, Font_16x26, ST7735_WHITE,ST7735_BLACK);
 
-	if(Select_alarm_time == 0){
+	if(Select_alarm_time == 0){//miga wartością którą zmieniamy
 		sprintf(strColored,"%02d",new_alarm.AlarmTime.Hours);
 		ST7735_WriteString(15, 35, strColored, Font_16x26, ST7735_BLACK,ST7735_BLACK);
 	}
@@ -298,6 +326,10 @@ void Set_Alarm(uint8_t remote)
 	}
 }
 
+/**
+  * @brief Wyświetla "Hello" na wyświetlaczu
+  * @retval None
+  */
 void Hello(void)
 {
 	 ST7735_FillScreen(ST7735_BLACK);
@@ -306,6 +338,10 @@ void Hello(void)
 	 ST7735_FillScreen(ST7735_BLACK);
 }
 
+/**
+  * @brief Pobiera czas z RTC i wypisuje na wyświetlacz
+  * @retval None
+  */
 void Write_TimeDate(void)
 {
 	HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
@@ -318,6 +354,10 @@ void Write_TimeDate(void)
 	ST7735_WriteString(25, 67, strDate, Font_11x18, ST7735_WHITE,ST7735_BLACK);
 }
 
+/**
+  * @brief Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz
+  * @retval None
+  */
 void Write_Temp(void)
 {
 	  ds18b20_start_measure(NULL);
@@ -331,6 +371,10 @@ void Write_Temp(void)
 	  ST7735_WriteString(20, 51, strTemp, Font_16x26, ST7735_WHITE,ST7735_BLACK);
 }
 
+/**
+  * @brief Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni
+  * @retval None
+  */
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
   if (htim == &htim3)
@@ -346,6 +390,10 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
   }
 }
 
+/**
+  * @brief Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura)
+  * @retval None
+  */
 void Write_selected(uint8_t select)
 {
 	if(select == 0)
@@ -358,27 +406,30 @@ void Write_selected(uint8_t select)
 	}
 }
 
-
+/**
+  * @brief Ustala co jest wyświetlane
+  * @retval None
+  */
 void Write_screen(uint8_t remote)
 {
-	if(remote == IR_ONOFF){
+	if(remote == IR_ONOFF){//Włączanie/wyłączanie podświetlenia wyświetlacza
 		HAL_GPIO_TogglePin(BL_GPIO_Port, BL_Pin);
 	}
-	else if(remote == IR_MENU){
+	else if(remote == IR_MENU){//zmiana między wyświetlaniem czasu a temperatury
 		Select_write = (Select_write + 1) % 2;
 		ST7735_FillScreen(ST7735_BLACK);
 	}
-	else if((remote == IR_PLAY) & (Select_write == 0)){
+	else if((remote == IR_PLAY) & (Select_write == 0)){//rozpoczęcie zmiany czasu
 		Enable_change = true;
 		Save_last_time();
 	}
-	else if((remote == IR_CANCEL) & (Select_write == 0)){
+	else if((remote == IR_CANCEL) & (Select_write == 0)){//rozpoczęcie ustawiania alarmu
 		Enable_alarm = true;
 		Save_last_alarm();
 		ST7735_FillScreen(ST7735_BLACK);
 	}
 
-	if(!Enable_change & !Enable_alarm)
+	if(!Enable_change & !Enable_alarm)//jeśli nie zmieniamy czasu, ani alarmu to przekazuje co aktualnie jest wybrane do wyświetlenia
 		Write_selected(Select_write);
 }
 
@@ -424,7 +475,7 @@ int main(void)
   ST7735_Init();
   Hello();
 
-  HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2048, RTC_WAKEUPCLOCK_RTCCLK_DIV16);//przerwanie RTC co 1s
+  HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2048, RTC_WAKEUPCLOCK_RTCCLK_DIV16);//Ustawienie przerwania co 1s
 
 
   /* USER CODE END 2 */

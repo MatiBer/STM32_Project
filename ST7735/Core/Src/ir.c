@@ -63,11 +63,13 @@ void ir_tim_interrupt(void)
 	}
 }
 
+
 void ir_init(void)
 {
 	  HAL_TIM_Base_Start(&htim3);
 	  HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1);
 }
+
 
 int ir_read(void)
 {

@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000201ec  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00019d07  00000000  00000000  0002021c  2**0
+ 12 .debug_info   00019d09  00000000  00000000  0002021c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000387c  00000000  00000000  00039f23  2**0
+ 13 .debug_abbrev 0000387c  00000000  00000000  00039f25  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001638  00000000  00000000  0003d7a0  2**3
+ 14 .debug_aranges 00001638  00000000  00000000  0003d7a8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00001488  00000000  00000000  0003edd8  2**3
+ 15 .debug_ranges 00001488  00000000  00000000  0003ede0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0002aa99  00000000  00000000  00040260  2**0
+ 16 .debug_macro  0002aa99  00000000  00000000  00040268  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001b7b6  00000000  00000000  0006acf9  2**0
+ 17 .debug_line   0001b7b6  00000000  00000000  0006ad01  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000ff246  00000000  00000000  000864af  2**0
+ 18 .debug_str    000ff246  00000000  00000000  000864b7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  001856f5  2**0
+ 19 .comment      00000050  00000000  00000000  001856fd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00006d0c  00000000  00000000  00185748  2**2
+ 20 .debug_frame  00006d0c  00000000  00000000  00185750  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1738,6 +1738,7 @@ void ir_tim_interrupt(void)
 
 080011f4 <ir_init>:
 
+
 void ir_init(void)
 {
  80011f4:	b580      	push	{r7, lr}
@@ -1756,6 +1757,7 @@ void ir_init(void)
  800120c:	20000378 	.word	0x20000378
 
 08001210 <ir_read>:
+
 
 int ir_read(void)
 {
@@ -1792,10 +1794,10 @@ int ir_read(void)
  8001244:	20000208 	.word	0x20000208
 
 08001248 <Active_alarm>:
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
+/**
+  * @brief Działanie alarmu
+  * @retval None
+  */
 void Active_alarm(uint8_t remote)
 {
  8001248:	b580      	push	{r7, lr}
@@ -1813,7 +1815,7 @@ void Active_alarm(uint8_t remote)
  800125e:	1ad3      	subs	r3, r2, r3
  8001260:	2b63      	cmp	r3, #99	; 0x63
  8001262:	d907      	bls.n	8001274 <Active_alarm+0x2c>
-		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);//Miga dioda
  8001264:	2120      	movs	r1, #32
  8001266:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
  800126a:	f002 f905 	bl	8003478 <HAL_GPIO_TogglePin>
@@ -1823,7 +1825,7 @@ void Active_alarm(uint8_t remote)
  8001272:	6013      	str	r3, [r2, #0]
 	}
 
-	if(remote == IR_BACK){
+	if(remote == IR_BACK){//Wyłączenie alarmu
  8001274:	79fb      	ldrb	r3, [r7, #7]
  8001276:	2b43      	cmp	r3, #67	; 0x43
  8001278:	d108      	bne.n	800128c <Active_alarm+0x44>
@@ -1864,6 +1866,9 @@ void Turn_on_alarm(void)
  80012b0:	2000029d 	.word	0x2000029d
 
 080012b4 <Save_last_time>:
+  * @brief Zapisanie ostatnich wartości zegara
+  * @retval None
+  */
 
 void Save_last_time(void)
 {
@@ -1911,6 +1916,9 @@ void Save_last_time(void)
  8001300:	200002b4 	.word	0x200002b4
 
 08001304 <Save_last_alarm>:
+  * @brief Przechowuje wartości ustawionego alarmu
+  * @retval None
+  */
 
 void Save_last_alarm(void)
 {
@@ -1941,7 +1949,10 @@ void Save_last_alarm(void)
  8001334:	200002b8 	.word	0x200002b8
 
 08001338 <Color_Selected>:
-
+/**
+  * @brief Zaznacza wybraną wartość zegara
+  * @retval None
+  */
 void Color_Selected(void)
 {
  8001338:	b580      	push	{r7, lr}
@@ -2205,7 +2216,10 @@ void Color_Selected(void)
  8001534:	0800ae10 	.word	0x0800ae10
 
 08001538 <Plus_Time>:
-
+/**
+  * @brief Zwiększa wybraną wartość zegara
+  * @retval None
+  */
 void Plus_Time(void)
 {
  8001538:	b480      	push	{r7}
@@ -2370,7 +2384,10 @@ void Plus_Time(void)
  8001664:	51eb851f 	.word	0x51eb851f
 
 08001668 <Minus_Time>:
-
+/**
+  * @brief Zmniejsza wybraną wartość zegara
+  * @retval None
+  */
 void Minus_Time(void)
 {
  8001668:	b480      	push	{r7}
@@ -2520,7 +2537,10 @@ void Minus_Time(void)
  8001754:	200002b4 	.word	0x200002b4
 
 08001758 <Change_Time>:
-
+/**
+  * @brief Zmienianie czasu i daty
+  * @retval None
+  */
 void Change_Time(uint8_t remote)
 {
  8001758:	b580      	push	{r7, lr}
@@ -2528,7 +2548,7 @@ void Change_Time(uint8_t remote)
  800175c:	af00      	add	r7, sp, #0
  800175e:	4603      	mov	r3, r0
  8001760:	71fb      	strb	r3, [r7, #7]
-	if(remote == IR_BACK)
+	if(remote == IR_BACK)//anulowanie zmieniania czasu
  8001762:	79fb      	ldrb	r3, [r7, #7]
  8001764:	2b43      	cmp	r3, #67	; 0x43
  8001766:	d102      	bne.n	800176e <Change_Time+0x16>
@@ -2553,7 +2573,7 @@ void Change_Time(uint8_t remote)
  800177e:	f7ff ff73 	bl	8001668 <Minus_Time>
 	}
 
-	if(remote == IR_FORWARD)
+	if(remote == IR_FORWARD)//przełącza wartość którą zmieniamy
  8001782:	79fb      	ldrb	r3, [r7, #7]
  8001784:	2b09      	cmp	r3, #9
  8001786:	d10f      	bne.n	80017a8 <Change_Time+0x50>
@@ -2574,7 +2594,7 @@ void Change_Time(uint8_t remote)
  80017a4:	4b16      	ldr	r3, [pc, #88]	; (8001800 <Change_Time+0xa8>)
  80017a6:	701a      	strb	r2, [r3, #0]
 
-	if(remote == IR_REWIND){
+	if(remote == IR_REWIND){//przełącza wartość którą zmieniamy
  80017a8:	79fb      	ldrb	r3, [r7, #7]
  80017aa:	2b07      	cmp	r3, #7
  80017ac:	d10c      	bne.n	80017c8 <Change_Time+0x70>
@@ -2598,7 +2618,7 @@ void Change_Time(uint8_t remote)
 	Color_Selected();
  80017c8:	f7ff fdb6 	bl	8001338 <Color_Selected>
 
-	if(remote == IR_PLAY){
+	if(remote == IR_PLAY){//Wczytuje zmienioną wartość do zegara
  80017cc:	79fb      	ldrb	r3, [r7, #7]
  80017ce:	2b15      	cmp	r3, #21
  80017d0:	d10f      	bne.n	80017f2 <Change_Time+0x9a>
@@ -2635,7 +2655,10 @@ void Change_Time(uint8_t remote)
  8001810:	200002b4 	.word	0x200002b4
 
 08001814 <Set_Alarm>:
-
+/**
+  * @brief Ustawianie godziny i minuty alarmu
+  * @retval None
+  */
 void Set_Alarm(uint8_t remote)
 {
  8001814:	b580      	push	{r7, lr}
@@ -2643,7 +2666,7 @@ void Set_Alarm(uint8_t remote)
  8001818:	af04      	add	r7, sp, #16
  800181a:	4603      	mov	r3, r0
  800181c:	71fb      	strb	r3, [r7, #7]
-	if(remote == IR_BACK)
+	if(remote == IR_BACK)//anuluje ustawianie alarmu bez zmiany
  800181e:	79fb      	ldrb	r3, [r7, #7]
  8001820:	2b43      	cmp	r3, #67	; 0x43
  8001822:	d102      	bne.n	800182a <Set_Alarm+0x16>
@@ -2652,7 +2675,7 @@ void Set_Alarm(uint8_t remote)
  8001826:	2200      	movs	r2, #0
  8001828:	701a      	strb	r2, [r3, #0]
 
-	if(remote == IR_PLUS){
+	if(remote == IR_PLUS){//zwiększa wybraną wartość
  800182a:	79fb      	ldrb	r3, [r7, #7]
  800182c:	2b40      	cmp	r3, #64	; 0x40
  800182e:	d12b      	bne.n	8001888 <Set_Alarm+0x74>
@@ -2704,7 +2727,7 @@ void Set_Alarm(uint8_t remote)
  8001886:	705a      	strb	r2, [r3, #1]
 	}
 
-	if(remote == IR_MINUS){
+	if(remote == IR_MINUS){//zmniejsza wybraną wartość
  8001888:	79fb      	ldrb	r3, [r7, #7]
  800188a:	2b19      	cmp	r3, #25
  800188c:	d122      	bne.n	80018d4 <Set_Alarm+0xc0>
@@ -2753,7 +2776,7 @@ void Set_Alarm(uint8_t remote)
 		}
 	}
 
-	if(remote == IR_FORWARD)
+	if(remote == IR_FORWARD)//przełącza wartość którą zmieniamy
  80018d4:	79fb      	ldrb	r3, [r7, #7]
  80018d6:	2b09      	cmp	r3, #9
  80018d8:	d10a      	bne.n	80018f0 <Set_Alarm+0xdc>
@@ -2769,7 +2792,7 @@ void Set_Alarm(uint8_t remote)
  80018ec:	4b39      	ldr	r3, [pc, #228]	; (80019d4 <Set_Alarm+0x1c0>)
  80018ee:	701a      	strb	r2, [r3, #0]
 
-	if(remote == IR_REWIND){
+	if(remote == IR_REWIND){//przełącza wartość którą zmieniamy
  80018f0:	79fb      	ldrb	r3, [r7, #7]
  80018f2:	2b07      	cmp	r3, #7
  80018f4:	d10c      	bne.n	8001910 <Set_Alarm+0xfc>
@@ -2790,11 +2813,11 @@ void Set_Alarm(uint8_t remote)
  800190e:	701a      	strb	r2, [r3, #0]
 	}
 
-	if(remote == IR_CANCEL){
+	if(remote == IR_CANCEL){//Ustawia alarm
  8001910:	79fb      	ldrb	r3, [r7, #7]
  8001912:	2b0d      	cmp	r3, #13
  8001914:	d10a      	bne.n	800192c <Set_Alarm+0x118>
-		HAL_RTC_SetAlarm(&hrtc, &new_alarm, RTC_FORMAT_BIN); //to nie działa - ta funkcja nie zapisuje nowego alarmu
+		HAL_RTC_SetAlarm(&hrtc, &new_alarm, RTC_FORMAT_BIN);
  8001916:	2200      	movs	r2, #0
  8001918:	492f      	ldr	r1, [pc, #188]	; (80019d8 <Set_Alarm+0x1c4>)
  800191a:	4832      	ldr	r0, [pc, #200]	; (80019e4 <Set_Alarm+0x1d0>)
@@ -2837,7 +2860,7 @@ void Set_Alarm(uint8_t remote)
  800195e:	200f      	movs	r0, #15
  8001960:	f000 fd3d 	bl	80023de <ST7735_WriteString>
 
-	if(Select_alarm_time == 0){
+	if(Select_alarm_time == 0){//miga wartością którą zmieniamy
  8001964:	4b1b      	ldr	r3, [pc, #108]	; (80019d4 <Set_Alarm+0x1c0>)
  8001966:	781b      	ldrb	r3, [r3, #0]
  8001968:	2b00      	cmp	r3, #0
@@ -2913,7 +2936,10 @@ void Set_Alarm(uint8_t remote)
  80019f8:	20000290 	.word	0x20000290
 
 080019fc <Hello>:
-
+/**
+  * @brief Wyświetla "Hello" na wyświetlaczu
+  * @retval None
+  */
 void Hello(void)
 {
  80019fc:	b580      	push	{r7, lr}
@@ -2949,7 +2975,10 @@ void Hello(void)
  8001a3c:	0800ae28 	.word	0x0800ae28
 
 08001a40 <Write_TimeDate>:
-
+/**
+  * @brief Pobiera czas z RTC i wypisuje na wyświetlacz
+  * @retval None
+  */
 void Write_TimeDate(void)
 {
  8001a40:	b580      	push	{r7, lr}
@@ -3036,7 +3065,10 @@ void Write_TimeDate(void)
  8001af0:	20000000 	.word	0x20000000
 
 08001af4 <Write_Temp>:
-
+/**
+  * @brief Wywołuje pomiar temperatury i wypisuje temperaturę na wyświetlacz
+  * @retval None
+  */
 void Write_Temp(void)
 {
  8001af4:	b580      	push	{r7, lr}
@@ -3096,7 +3128,10 @@ void Write_Temp(void)
  8001b6c:	20000008 	.word	0x20000008
 
 08001b70 <HAL_TIM_IC_CaptureCallback>:
-
+/**
+  * @brief Obsługa Input capture przy wykryciu zmian na diodzie podczerwieni
+  * @retval None
+  */
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
  8001b70:	b580      	push	{r7, lr}
@@ -3137,7 +3172,10 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
  8001ba0:	20000378 	.word	0x20000378
 
 08001ba4 <Write_selected>:
-
+/**
+  * @brief Wywołuje wyświetlanie tych wartości które wybraliśmy(czas albo temperatura)
+  * @retval None
+  */
 void Write_selected(uint8_t select)
 {
  8001ba4:	b580      	push	{r7, lr}
@@ -3172,8 +3210,10 @@ void Write_selected(uint8_t select)
  8001bca:	bd80      	pop	{r7, pc}
 
 08001bcc <Write_screen>:
-
-
+/**
+  * @brief Ustala co jest wyświetlane
+  * @retval None
+  */
 void Write_screen(uint8_t remote)
 {
  8001bcc:	b580      	push	{r7, lr}
@@ -3181,7 +3221,7 @@ void Write_screen(uint8_t remote)
  8001bd0:	af00      	add	r7, sp, #0
  8001bd2:	4603      	mov	r3, r0
  8001bd4:	71fb      	strb	r3, [r7, #7]
-	if(remote == IR_ONOFF){
+	if(remote == IR_ONOFF){//Włączanie/wyłączanie podświetlenia wyświetlacza
  8001bd6:	79fb      	ldrb	r3, [r7, #7]
  8001bd8:	2b45      	cmp	r3, #69	; 0x45
  8001bda:	d106      	bne.n	8001bea <Write_screen+0x1e>
@@ -3191,7 +3231,7 @@ void Write_screen(uint8_t remote)
  8001be4:	f001 fc48 	bl	8003478 <HAL_GPIO_TogglePin>
  8001be8:	e041      	b.n	8001c6e <Write_screen+0xa2>
 	}
-	else if(remote == IR_MENU){
+	else if(remote == IR_MENU){//zmiana między wyświetlaniem czasu a temperatury
  8001bea:	79fb      	ldrb	r3, [r7, #7]
  8001bec:	2b47      	cmp	r3, #71	; 0x47
  8001bee:	d10e      	bne.n	8001c0e <Write_screen+0x42>
@@ -3211,7 +3251,7 @@ void Write_screen(uint8_t remote)
  8001c08:	f000 fca8 	bl	800255c <ST7735_FillScreen>
  8001c0c:	e02f      	b.n	8001c6e <Write_screen+0xa2>
 	}
-	else if((remote == IR_PLAY) & (Select_write == 0)){
+	else if((remote == IR_PLAY) & (Select_write == 0)){//rozpoczęcie zmiany czasu
  8001c0e:	79fb      	ldrb	r3, [r7, #7]
  8001c10:	2b15      	cmp	r3, #21
  8001c12:	bf0c      	ite	eq
@@ -3237,7 +3277,7 @@ void Write_screen(uint8_t remote)
  8001c36:	f7ff fb3d 	bl	80012b4 <Save_last_time>
  8001c3a:	e018      	b.n	8001c6e <Write_screen+0xa2>
 	}
-	else if((remote == IR_CANCEL) & (Select_write == 0)){
+	else if((remote == IR_CANCEL) & (Select_write == 0)){//rozpoczęcie ustawiania alarmu
  8001c3c:	79fb      	ldrb	r3, [r7, #7]
  8001c3e:	2b0d      	cmp	r3, #13
  8001c40:	bf0c      	ite	eq
@@ -3266,7 +3306,7 @@ void Write_screen(uint8_t remote)
  8001c6a:	f000 fc77 	bl	800255c <ST7735_FillScreen>
 	}
 
-	if(!Enable_change & !Enable_alarm)
+	if(!Enable_change & !Enable_alarm)//jeśli nie zmieniamy czasu, ani alarmu to przekazuje co aktualnie jest wybrane do wyświetlenia
  8001c6e:	4b0c      	ldr	r3, [pc, #48]	; (8001ca0 <Write_screen+0xd4>)
  8001c70:	781b      	ldrb	r3, [r3, #0]
  8001c72:	f083 0301 	eor.w	r3, r3, #1
@@ -3339,7 +3379,7 @@ int main(void)
   Hello();
  8001cd0:	f7ff fe94 	bl	80019fc <Hello>
 
-  HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2048, RTC_WAKEUPCLOCK_RTCCLK_DIV16);//przerwanie RTC co 1s
+  HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2048, RTC_WAKEUPCLOCK_RTCCLK_DIV16);//Ustawienie przerwania co 1s
  8001cd4:	2200      	movs	r2, #0
  8001cd6:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8001cda:	4814      	ldr	r0, [pc, #80]	; (8001d2c <main+0x84>)
@@ -4333,6 +4373,7 @@ static void ST7735_SetAddressWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t 
 	...
 
 080022bc <ST7735_Init>:
+
 
 void ST7735_Init() {
  80022bc:	b580      	push	{r7, lr}

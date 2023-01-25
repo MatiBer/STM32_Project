@@ -151,6 +151,7 @@ static void ST7735_SetAddressWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t 
     ST7735_WriteCommand(ST7735_RAMWR);
 }
 
+
 void ST7735_Init() {
     ST7735_Select();
     ST7735_Reset();

@@ -17,7 +17,7 @@
 // Procedura obsługi przerwania
 void ir_tim_interrupt(void);
 
-// Inicjalizacja modułu
+// Inicjalizacja komunikacji przez podczerwień
 void ir_init(void);
 
 // Funkcja odczytująca dane
